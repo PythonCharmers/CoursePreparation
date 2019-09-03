@@ -1,6 +1,5 @@
 # Summary
 
-* [Dedication](dedication.md)
 * [Preface](preface.md)
 * [About Python](about_python.md)
 * [Installation](installation.md)
@@ -18,9 +17,3 @@
 * [Standard Library](stdlib.md)
 * [More](more.md)
 * [What Next](what_next.md)
-* [Appendix: FLOSS](floss.md)
-* [Appendix: About](about.md)
-* [Appendix: Revision History](revision_history.md)
-* [Appendix: Translations](translations.md)
-* [Appendix: Translation How-to](translation_howto.md)
-* [Feedback](feedback.md)
