@@ -1,88 +1,91 @@
 # Installation {#installation}
 
-When we refer to "Python 3" in this book, we will be referring to any version of Python equal to or greater than version [Python {{ book.pythonVersion }}](https://www.python.org/downloads/).
+If you have not used Python before and would like to start using Python
+before your Python Charmers course, this chapter describes how to get
+started.
 
-## Installation on Windows
+## Overview
 
-Visit https://www.python.org/downloads/ and download the latest version. At the time of this writing, it was Python 3.5.1 
-The installation is just like any other Windows-based software.
+We recommend the latest Anaconda Python 3.7 installer, which is available from
+[here](https://www.anaconda.com/distribution#download-section). This
+comes with Python and several hundred of the most important 3rd-party
+packages. To install this, choose a folder name without a space in it.
+(Examples: C:\Python3, /home/user/anaconda.)
 
-Note that if your Windows version is pre-Vista, you should [download Python 3.4 only](https://www.python.org/downloads/windows/) as later versions require newer versions of Windows.
+## More details
 
-CAUTION: Make sure you check option `Add Python 3.5 to PATH`.
+Feel free to skip the rest of this chapter if the above instructions are
+enough. Otherwise, read on for more details about installing Python via
+Anaconda.
 
-To change install location, click on `Customize installation`, then `Next` and enter `C:\python35` (or another appropriate location) as the install location.
+## Python 3.x
 
-If you didn’t check the `Add Python 3.5 PATH` option earlier, check `Add Python to environment variables`. This does the same thing as `Add Python 3.5 to PATH` on the first install screen.
+The latest version is Python 3.7. The Python 3.x series is the future of
+all development in the language. Python 2 is a dead end; it will not be
+developed further. We will use Python 3.7 as the default version for the
+training course.
 
-You can choose to install Launcher for all users or not, it does not matter much. Launcher is used to switch between different versions of Python installed.
+When we refer to "Python 3" in this book, we will assume any version of
+Python equal to or greater than version 3.5.
 
-If your path was not set correctly (by checking the `Add Python 3.5 Path` or `Add Python to environment variables` options), then follow the steps in the next section (`DOS Prompt`) to fix it. Otherwise, go to the `Running Python prompt on Windows` section in this document.
+## Older Python versions
 
-NOTE: For people who already know programming, if you are familiar with Docker, check out [Python in Docker](https://hub.docker.com/_/python/) and [Docker on Windows](https://docs.docker.com/windows/).
+Python 2 is now a "legacy" platform that has received no major updates
+since 2010. 
 
-### DOS Prompt {#dos-prompt}
+The vast majority of Python's best packages now support Python 3.x (see
+http://py3readiness.org), so we highly recommend starting new projects in
+Python 3.7. Python 3.7 is also cleaner and more consistent and has a
+healthy number of new useful features versus 2.7.
 
-If you want to be able to use Python from the Windows command line i.e. the DOS prompt, then you need to set the PATH variable appropriately.
+However, note that Python 3.x is backwardly incompatible with the Python
+2.x series. If you are developing an existing Python 2.x code base, you
+must update the code to support Python 3 idioms or stick with the older
+version.
 
-For Windows 2000, XP, 2003 , click on `Control Panel` -> `System` -> `Advanced` -> `Environment Variables`. Click on the variable named `PATH` in the _System Variables_ section, then select `Edit` and add `;C:\Python35` (please verify that this folder exists, it will be different for newer versions of Python) to the end of what is already there. Of course, use the appropriate directory name.
+It is now relatively easy to provide automatic forward
+compatibility for running Python 3-style code under Python 2 using the
+**python-future** project, which Python Charmers sponsors. See
+http://python-future.org for information on writing compatible code.
 
-<!-- The directory should match pythonVersion variable in book.json -->
-For older versions of Windows, open the file `C:\AUTOEXEC.BAT` and add the line `PATH=%PATH%;C:\Python35` and restart the system. For Windows NT, use the `AUTOEXEC.NT` file.
-
-For Windows Vista:
-
-- Click Start and choose `Control Panel`
-- Click System, on the right you'll see "View basic information about your computer"
-- On the left is a list of tasks, the last of which is `Advanced system settings`. Click that.
-- The `Advanced` tab of the `System Properties` dialog box is shown. Click the `Environment Variables` button on the bottom right.
-- In the lower box titled `System Variables` scroll down to Path and click the `Edit` button.
-- Change your path as need be.
-- Restart your system. Vista didn't pick up the system path environment variable change until I restarted.
-
-For Windows 7 and 8:
-
-- Right click on Computer from your desktop and select `Properties` or click `Start` and choose `Control Panel` -> `System and Security` -> `System`. Click on `Advanced system settings` on the left and then click on the `Advanced` tab. At the bottom click on `Environment Variables` and under `System variables`, look for the `PATH` variable, select and then press `Edit`.
-- Go to the end of the line under Variable value and append `;C:\Python35` (please verify that this folder exists, it will be different for newer versions of Python) to the end of what is already there. Of course, use the appropriate folder name.
-- If the value was `%SystemRoot%\system32;` It will now become `%SystemRoot%\system32;C:\Python36` <!-- The directory should match pythonVersion variable in book.json -->
-- Click `OK` and you are done. No restart is required, however you may have to close and reopen the command line.
-
-For Windows 10:
-
-Windows Start Menu > `Settings` > `About` > `System Info` (this is all the way over to the right) > `Advanced System Settings` > `Environment Variables` (this is towards the bottom) > (then highlight `Path` variable and click `Edit`) > `New` > (type in whatever your python location is.  For example, `C:\Python35\`)
+Your training course with Python Charmers will largely describe how to
+write code that is compatible with both Python 3.x and
+Python 2.x. 
 
 
-### Running Python prompt on Windows
+## Installation requirements
 
-For Windows users, you can run the interpreter in the command line if you have [set the `PATH` variable appropriately](#dos-prompt).
+We highly recommend at least 8 GB of memory (RAM) and a 64-bit operating
+system. All of the 3 major operating systems are supported: Windows,
+macOS, and Linux.
 
-To open the terminal in Windows, click the start button and click `Run`. In the dialog box, type `cmd` and press `[enter]` key.
 
-Then, type `python` and ensure there are no errors.
+## Anaconda Python
 
-## Installation on Mac OS X
 
-For Mac OS X users, use [Homebrew](http://brew.sh): `brew install python3`.
+We recommend installing Python via the Anaconda distribution, because it:
 
-To verify, open the terminal by pressing `[Command + Space]` keys (to open Spotlight search), type `Terminal` and press `[enter]` key. Now, run `python3` and ensure there are no errors.
+- is free
+- can be installed without Administrator / root privileges
+- supports all three major platforms (Windows, macOS, Linux)
+- is up-to-date
+- can be upgraded easily
+- provides **binaries** of many of the traditionally hardest-to-install
+  packages, like SciPy, scikit-learn, Numba, PIL (via Pillow), lxml, and
+  libraries for geospatial analysis.
 
-## Installation on GNU/Linux
 
-For GNU/Linux users, use your distribution's package manager to install Python 3, e.g. on Debian & Ubuntu: `sudo apt-get update && sudo apt-get install python3`.
+The **Anaconda Python 3.x** installer is available
+[here](https://www.anaconda.com/distribution#download-section).
 
-To verify, open the terminal by opening the `Terminal` application or by pressing `Alt + F2` and entering `gnome-terminal`. If that doesn't work, please refer the documentation of your particular GNU/Linux distribution. Now, run `python3` and ensure there are no errors.
+We highly recommend that you install Anaconda:
+1. for your user account (**not** for all users). This
+  way you can install and remove packages later without needing
+  Administrator / root access privileges.
+2. in a folder without spaces. For example: `C:\Python3` or
+  `/home/user/anaconda` are good choices. Spaces in the Python path
+  occasionally cause scripts to break.
 
-You can see the version of Python on the screen by running:
-
-<!-- The output should match pythonVersion variable in book.json -->
-```
-$ python3 -V
-Python 3.6.0
-```
-
-NOTE: `$` is the prompt of the shell. It will be different for you depending on the settings of the operating system on your computer, hence I will indicate the prompt by just the `$` symbol.
-
-CAUTION: Output may be different on your computer, depending on the version of Python software installed on your computer.
 
 ## Summary
 
