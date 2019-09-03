@@ -11,7 +11,7 @@ This version is customized by [Python Charmers](https://pythoncharmers.com) to b
 
 ## Original edition
 
-The original version is online [here](https://python.swaroopch.com).
+The original version by [Swaroop C H](https://swaroopch.com) is online [here](https://python.swaroopch.com).
 
 ## License
 
