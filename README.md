@@ -7,7 +7,7 @@ how to save text files, then this is the book for you.
 
 This version is customized by [Python Charmers](https://pythoncharmers.com) to be optimal as pre-course reading for Python Charmers' [Introduction to Python](https://pythoncharmers.com/training/introduction-to-python/) course.
 
-<img src="notebooks/img/python_charmers_logo.png" width="400" alt="Python Charmers Logo">
+<img src="img/python_charmers_logo.png" width="400" alt="Python Charmers Logo">
 
 ## Original edition
 
