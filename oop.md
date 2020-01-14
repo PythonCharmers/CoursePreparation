@@ -36,14 +36,21 @@ This also means that if you have a method which takes no arguments, then you sti
 
 The simplest class possible is shown in the following example \(save as `oop_simplestclass.py`\).
 
-```text
-{% include "./programs/oop_simplestclass.py" %}
+```py
+class Person:
+    pass  # An empty block
+
+p = Person()
+print(p)
+
 ```
 
 Output:
 
 ```text
-{% include "./programs/oop_simplestclass.txt" %}
+$ python oop_simplestclass.py
+&lt;__main__.Person instance at 0x10171f518&gt;
+
 ```
 
 **How It Works**
@@ -58,14 +65,24 @@ Notice that the address of the computer memory where your object is stored is al
 
 We have already discussed that classes/objects can have methods just like functions except that we have an extra `self` variable. We will now see an example \(save as `oop_method.py`\).
 
-```text
-{% include "./programs/oop_method.py" %}
+```py
+class Person:
+    def say_hi(self):
+        print('Hello, how are you?')
+
+p = Person()
+p.say_hi()
+# The previous 2 lines can also be written as
+# Person().say_hi()
+
 ```
 
 Output:
 
 ```text
-{% include "./programs/oop_method.txt" %}
+$ python oop_method.py
+Hello, how are you?
+
 ```
 
 **How It Works**
@@ -80,14 +97,27 @@ The `__init__` method is run as soon as an object of a class is instantiated \(i
 
 Example \(save as `oop_init.py`\):
 
-```text
-{% include "./programs/oop_init.py" %}
+```py
+class Person:
+    def __init__(self, name):
+        self.name = name
+
+    def say_hi(self):
+        print('Hello, my name is', self.name)
+
+p = Person('Swaroop')
+p.say_hi()
+# The previous 2 lines can also be written as
+# Person('Swaroop').say_hi()
+
 ```
 
 Output:
 
 ```text
-{% include "./programs/oop_init.txt" %}
+$ python oop_init.py
+Hello, my name is Swaroop
+
 ```
 
 **How It Works**
@@ -110,14 +140,84 @@ There are two types of _fields_ - class variables and object variables which are
 
 **Object variables** are owned by each individual object/instance of the class. In this case, each object has its own copy of the field i.e. they are not shared and are not related in any way to the field by the same name in a different instance. An example will make this easy to understand \(save as `oop_objvar.py`\):
 
-```text
-{% include "./programs/oop_objvar.py" %}
+```py
+class Robot:
+    """Represents a robot, with a name."""
+
+    # A class variable, counting the number of robots
+    population = 0
+
+    def __init__(self, name):
+        """Initializes the data."""
+        self.name = name
+        print("(Initializing {})".format(self.name))
+
+        # When this person is created, the robot
+        # adds to the population
+        Robot.population += 1
+
+    def die(self):
+        """I am dying."""
+        print("{} is being destroyed!".format(self.name))
+
+        Robot.population -= 1
+
+        if Robot.population == 0:
+            print("{} was the last one.".format(self.name))
+        else:
+            print("There are still {:d} robots working.".format(
+                Robot.population))
+
+    def say_hi(self):
+        """Greeting by the robot.
+
+        Yeah, they can do that."""
+        print("Greetings, my masters call me {}.".format(self.name))
+
+    @classmethod
+    def how_many(cls):
+        """Prints the current population."""
+        print("We have {:d} robots.".format(cls.population))
+
+
+droid1 = Robot("R2-D2")
+droid1.say_hi()
+Robot.how_many()
+
+droid2 = Robot("C-3PO")
+droid2.say_hi()
+Robot.how_many()
+
+print("\nRobots can do some work here.\n")
+
+print("Robots have finished their work. So let's destroy them.")
+droid1.die()
+droid2.die()
+
+Robot.how_many()
+
 ```
 
 Output:
 
 ```text
-{% include "./programs/oop_objvar.txt" %}
+$ python oop_objvar.py
+(Initializing R2-D2)
+Greetings, my masters call me R2-D2.
+We have 1 robots.
+(Initializing C-3PO)
+Greetings, my masters call me C-3PO.
+We have 2 robots.
+
+Robots can do some work here.
+
+Robots have finished their work. So let's destroy them.
+R2-D2 is being destroyed!
+There are still 1 robots working.
+C-3PO is being destroyed!
+C-3PO was the last one.
+We have 0 robots.
+
 ```
 
 **How It Works**
@@ -172,14 +272,67 @@ The `SchoolMember` class in this situation is known as the **base class** or the
 
 We will now see this example as a program \(save as `oop_subclass.py`\):
 
-```text
-{% include "./programs/oop_subclass.py" %}
+```py
+class SchoolMember:
+    '''Represents any school member.'''
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        print('(Initialized SchoolMember: {})'.format(self.name))
+
+    def tell(self):
+        '''Tell my details.'''
+        print('Name:"{}" Age:"{}"'.format(self.name, self.age), end=" ")
+
+
+class Teacher(SchoolMember):
+    '''Represents a teacher.'''
+    def __init__(self, name, age, salary):
+        SchoolMember.__init__(self, name, age)
+        self.salary = salary
+        print('(Initialized Teacher: {})'.format(self.name))
+
+    def tell(self):
+        SchoolMember.tell(self)
+        print('Salary: "{:d}"'.format(self.salary))
+
+
+class Student(SchoolMember):
+    '''Represents a student.'''
+    def __init__(self, name, age, marks):
+        SchoolMember.__init__(self, name, age)
+        self.marks = marks
+        print('(Initialized Student: {})'.format(self.name))
+
+    def tell(self):
+        SchoolMember.tell(self)
+        print('Marks: "{:d}"'.format(self.marks))
+
+t = Teacher('Mrs. Shrividya', 40, 30000)
+s = Student('Swaroop', 25, 75)
+
+# prints a blank line
+print()
+
+members = [t, s]
+for member in members:
+    # Works for both Teachers and Students
+    member.tell()
+
 ```
 
 Output:
 
 ```text
-{% include "./programs/oop_subclass.txt" %}
+$ python oop_subclass.py
+(Initialized SchoolMember: Mrs. Shrividya)
+(Initialized Teacher: Mrs. Shrividya)
+(Initialized SchoolMember: Swaroop)
+(Initialized Student: Swaroop)
+
+Name:"Mrs. Shrividya" Age:"40" Salary: "30000"
+Name:"Swaroop" Age:"25" Marks: "75"
+
 ```
 
 **How It Works**
