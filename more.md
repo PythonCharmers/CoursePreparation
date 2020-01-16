@@ -70,12 +70,11 @@ A `lambda` statement is used to create new function objects. Essentially, the `l
 
 Example \(save as `more_lambda.py`\):
 
-```py
+```python
 points = [{'x': 2, 'y': 3},
           {'x': 4, 'y': 1}]
 points.sort(key=lambda i: i['y'])
 print(points)
-
 ```
 
 Output:
@@ -83,7 +82,6 @@ Output:
 ```text
 $ python more_lambda.py
 [{'y': 1, 'x': 4}, {'y': 3, 'x': 2}]
-
 ```
 
 **How It Works**
@@ -96,11 +94,10 @@ List comprehensions are used to derive a new list from an existing list. Suppose
 
 Example \(save as `more_list_comprehension.py`\):
 
-```py
+```python
 listone = [2, 3, 4]
 listtwo = [2*i for i in listone if i > 2]
 print(listtwo)
-
 ```
 
 Output:
@@ -108,7 +105,6 @@ Output:
 ```text
 $ python more_list_comprehension.py
 [6, 8]
-
 ```
 
 **How It Works**
@@ -158,7 +154,7 @@ The `assert` statement should be used judiciously. Most of the time, it is bette
 
 Decorators are a shortcut to applying wrapper functions. This is helpful to "wrap" functionality with the same code over and over again. For example, I created a `retry` decorator for myself that I can just apply to any function and if any exception is thrown during a run, it is retried again, till a maximum of 5 times and with a delay between each retry. This is especially useful for situations where you are trying to make a network call to a remote computer:
 
-```py
+```python
 from time import sleep
 from functools import wraps
 import logging
@@ -202,7 +198,6 @@ def save_to_database(arg):
 
 if __name__ == '__main__':
     save_to_database("Some bad value")
-
 ```
 
 Output:
@@ -220,7 +215,6 @@ Traceback (most recent call last):
 ValueError: Some bad value
 Write to a database or make a network call or etc.
 This will be automatically retried if exception is thrown.
-
 ```
 
 **How It Works**

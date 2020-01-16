@@ -30,7 +30,7 @@ As the design of our program is now reasonably stable, we can write the code whi
 
 Save as `backup_ver1.py`:
 
-```py
+```python
 import os
 import time
 
@@ -73,7 +73,6 @@ if os.system(zip_command) == 0:
     print('Successful backup to', target)
 else:
     print('Backup FAILED')
-
 ```
 
 Output:
@@ -88,7 +87,6 @@ Running:
   adding: Users/swa/notes/blah2.txt (stored 0%)
   adding: Users/swa/notes/blah3.txt (stored 0%)
 Successful backup to /Users/swa/backup/20140328084844.zip
-
 ```
 
 Now, we are in the _testing_ phase where we test that our program works properly. If it doesn't behave as expected, then we have to _debug_ our program i.e. remove the _bugs_ \(errors\) from the program.
@@ -131,7 +129,7 @@ One of the refinements I felt was useful is a better file-naming mechanism - usi
 
 Save as `backup_ver2.py`:
 
-```py
+```python
 import os
 import time
 
@@ -183,7 +181,6 @@ if os.system(zip_command) == 0:
     print('Successful backup to', target)
 else:
     print('Backup FAILED')
-
 ```
 
 Output:
@@ -199,7 +196,6 @@ Running:
   adding: Users/swa/notes/blah2.txt (stored 0%)
   adding: Users/swa/notes/blah3.txt (stored 0%)
 Successful backup to /Users/swa/backup/20140329/073201.zip
-
 ```
 
 **How It Works**
@@ -214,7 +210,7 @@ WARNING: The following program does not work, so do not be alarmed, please follo
 
 Save as `backup_ver3.py`:
 
-```py
+```python
 import os
 import time
 
@@ -273,7 +269,6 @@ if os.system(zip_command) == 0:
     print('Successful backup to', target)
 else:
     print('Backup FAILED')
-
 ```
 
 Output:
@@ -284,7 +279,6 @@ $ python backup_ver3.py
     target = today + os.sep + now + '_' +
                                         ^
 SyntaxError: invalid syntax
-
 ```
 
 **How This \(does not\) Work**
@@ -297,7 +291,7 @@ On careful observation, we see that the single logical line has been split into 
 
 Save as `backup_ver4.py`:
 
-```py
+```python
 import os
 import time
 
@@ -356,7 +350,6 @@ if os.system(zip_command) == 0:
     print('Successful backup to', target)
 else:
     print('Backup FAILED')
-
 ```
 
 Output:
@@ -372,7 +365,6 @@ Running:
   adding: Users/swa/notes/blah2.txt (stored 0%)
   adding: Users/swa/notes/blah3.txt (stored 0%)
 Successful backup to /Users/swa/backup/20140329/074122_added_new_examples.zip
-
 ```
 
 **How It Works**

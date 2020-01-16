@@ -10,7 +10,7 @@ A module can be _imported_ by another program to make use of its functionality. 
 
 Example \(save as `module_using_sys.py`\):
 
-```py
+```python
 import sys
 
 print('The command line arguments are:')
@@ -18,13 +18,12 @@ for i in sys.argv:
     print(i)
 
 print('\n\nThe PYTHONPATH is', sys.path, '\n')
-
 ```
 
 Output:
 
 ```text
-$ python module_using_sys.py we are arguments	# each arg is separated by white space
+$ python module_using_sys.py we are arguments    # each arg is separated by white space
 The command line arguments are:
 module_using_sys.py
 we
@@ -36,7 +35,6 @@ The PYTHONPATH is ['/tmp/py',
 # many entries here, not shown here
 '/Library/Python/2.7/site-packages',
 '/usr/local/lib/python2.7/site-packages']
-
 ```
 
 **How It Works**
@@ -86,12 +84,11 @@ Every module has a name and statements in a module can find out the name of thei
 
 Example \(save as `module_using_name.py`\):
 
-```py
+```python
 if __name__ == '__main__':
     print('This program is being run by itself')
 else:
     print('I am being imported from another module')
-
 ```
 
 Output:
@@ -104,7 +101,6 @@ $ python
 >>> import module_using_name
 I am being imported from another module
 >>>
-
 ```
 
 **How It Works**
@@ -117,12 +113,11 @@ Creating your own modules is easy, you've been doing it all along! This is becau
 
 Example \(save as `mymodule.py`\):
 
-```py
+```python
 def say_hi():
     print('Hi, this is mymodule speaking.')
 
 __version__ = '0.1'
-
 ```
 
 The above was a sample _module_. As you can see, there is nothing particularly special about it compared to our usual Python program. We will next see how to use this module in our other Python programs.
@@ -131,12 +126,11 @@ Remember that the module should be placed either in the same directory as the pr
 
 Another module \(save as `mymodule_demo.py`\):
 
-```py
+```python
 import mymodule
 
 mymodule.say_hi()
 print('Version', mymodule.__version__)
-
 ```
 
 Output:
@@ -145,7 +139,6 @@ Output:
 $ python mymodule_demo.py
 Hi, this is mymodule speaking.
 Version 0.1
-
 ```
 
 **How It Works**
@@ -154,12 +147,11 @@ Notice that we use the same dotted notation to access members of the module. Pyt
 
 Here is a version utilising the `from..import` syntax \(save as `mymodule_demo2.py`\):
 
-```py
+```python
 from mymodule import say_hi, __version__
 
 say_hi()
 print('Version', __version__)
-
 ```
 
 The output of `mymodule_demo2.py` is same as the output of `mymodule_demo.py`.
@@ -175,7 +167,7 @@ from mymodule import *
 This will import all public names such as `say_hi` but would not import `__version__` because it starts with double underscores.
 
 > WARNING: Remember that you should avoid using import-star, i.e. `from mymodule import *`.
-
+>
 > **Zen of Python**
 >
 > One of Python's guiding principles is that "Explicit is better than Implicit". Run `import this` in Python to learn more.

@@ -38,7 +38,7 @@ We can handle exceptions using the `try..except` statement. We basically put our
 
 Example \(save as `exceptions_handle.py`\):
 
-```py
+```python
 try:
     text = input('Enter something --> ')
 except EOFError:
@@ -47,7 +47,6 @@ except KeyboardInterrupt:
     print('You cancelled the operation.')
 else:
     print('You entered {}'.format(text))
-
 ```
 
 Output:
@@ -64,7 +63,6 @@ Enter something --> ^CYou cancelled the operation.
 $ python exceptions_handle.py
 Enter something --> No exceptions
 You entered No exceptions
-
 ```
 
 **How It Works**
@@ -87,7 +85,7 @@ The error or exception that you can raise should be a class which directly or in
 
 Example \(save as `exceptions_raise.py`\):
 
-```py
+```python
 class ShortInputException(Exception):
     '''A user-defined exception class.'''
     def __init__(self, length, atleast):
@@ -108,7 +106,6 @@ except ShortInputException as ex:
           .format(ex.length, ex.atleast))
 else:
     print('No exception was raised.')
-
 ```
 
 Output:
@@ -121,7 +118,6 @@ ShortInputException: The input was 1 long, expected at least 3
 $ python exceptions_raise.py
 Enter something --> abc
 No exception was raised.
-
 ```
 
 **How It Works**
@@ -136,7 +132,7 @@ Suppose you are reading a file in your program. How do you ensure that the file 
 
 Save this program as `exceptions_finally.py`:
 
-```py
+```python
 import sys
 import time
 
@@ -161,7 +157,6 @@ finally:
     if f:
         f.close()
     print("(Cleaning up: Closed the file)")
-
 ```
 
 Output:
@@ -172,7 +167,6 @@ Programming is fun
 Press ctrl+c now
 ^C!! You cancelled the reading from the file.
 (Cleaning up: Closed the file)
-
 ```
 
 **How It Works**
@@ -191,11 +185,10 @@ Acquiring a resource in the `try` block and subsequently releasing the resource 
 
 Save as `exceptions_using_with.py`:
 
-```py
+```python
 with open("poem.txt") as f:
     for line in f:
         print(line, end='')
-
 ```
 
 **How It Works**

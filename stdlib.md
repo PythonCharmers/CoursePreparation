@@ -32,7 +32,7 @@ What if you wanted to have some debugging messages or important messages to be s
 
 Save as `stdlib_logging.py`:
 
-```py
+```python
 import os
 import platform
 import logging
@@ -57,7 +57,6 @@ logging.basicConfig(
 logging.debug("Start of the program")
 logging.info("Doing something")
 logging.warning("Dying now")
-
 ```
 
 Output:
@@ -70,7 +69,6 @@ $ cat /Users/swa/test.log
 2014-03-29 09:27:36,660 : DEBUG : Start of the program
 2014-03-29 09:27:36,660 : INFO : Doing something
 2014-03-29 09:27:36,660 : WARNING : Dying now
-
 ```
 
 The `cat` command is used in the command line to read the 'test.log' file. If the `cat` command is not available, you can open the `test.log` file in a text editor instead.

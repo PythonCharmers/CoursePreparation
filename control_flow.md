@@ -10,7 +10,7 @@ The `if` statement is used to check a condition: _if_ the condition is true, we 
 
 Example \(save as `if.py`\):
 
-```py
+```python
 number = 23
 guess = int(input('Enter an integer : '))
 
@@ -30,7 +30,6 @@ else:
 print('Done')
 # This last statement is always executed,
 # after the if statement is executed.
-
 ```
 
 Output:
@@ -51,7 +50,6 @@ Enter an integer : 23
 Congratulations, you guessed it.
 (but you do not win any prizes!)
 Done
-
 ```
 
 **How It Works**
@@ -91,7 +89,7 @@ The `while` statement allows you to repeatedly execute a block of statements as 
 
 Example \(save as `while.py`\):
 
-```py
+```python
 number = 23
 running = True
 
@@ -111,7 +109,6 @@ else:
     # Do anything else you want to do here
 
 print('Done')
-
 ```
 
 Output:
@@ -126,7 +123,6 @@ Enter an integer : 23
 Congratulations, you guessed it.
 The while loop is over.
 Done
-
 ```
 
 **How It Works**
@@ -149,12 +145,11 @@ The `for..in` statement is another looping statement which _iterates_ over a seq
 
 Example \(save as `for.py`\):
 
-```py
+```python
 for i in range(1, 5):
     print(i)
 else:
     print('The for loop is over')
-
 ```
 
 Output:
@@ -166,7 +161,6 @@ $ python for.py
 3
 4
 The for loop is over
-
 ```
 
 **How It Works**
@@ -197,14 +191,13 @@ An important note is that if you _break_ out of a `for` or `while` loop, any cor
 
 Example \(save as `break.py`\):
 
-```py
+```python
 while True:
     s = input('Enter something : ')
     if s == 'quit':
         break
     print('Length of the string is', len(s))
 print('Done')
-
 ```
 
 Output:
@@ -221,7 +214,6 @@ Enter something : use Python!
 Length of the string is 11
 Enter something : quit
 Done
-
 ```
 
 **How It Works**
@@ -249,7 +241,7 @@ The `continue` statement is used to tell Python to skip the rest of the statemen
 
 Example \(save as `continue.py`\):
 
-```py
+```python
 while True:
     s = input('Enter something : ')
     if s == 'quit':
@@ -259,7 +251,6 @@ while True:
         continue
     print('Input is of sufficient length')
     # Do other kinds of processing here...
-
 ```
 
 Output:
@@ -273,7 +264,6 @@ Too small
 Enter something : abc
 Input is of sufficient length
 Enter something : quit
-
 ```
 
 **How It Works**

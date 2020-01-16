@@ -8,7 +8,7 @@ Functions are defined using the `def` keyword. After this keyword comes an _iden
 
 Example \(save as `function1.py`\):
 
-```py
+```python
 def say_hello():
     # block belonging to the function
     print('hello world')
@@ -16,7 +16,6 @@ def say_hello():
 
 say_hello()  # call the function
 say_hello()  # call the function again
-
 ```
 
 Output:
@@ -25,7 +24,6 @@ Output:
 $ python function1.py
 hello world
 hello world
-
 ```
 
 **How It Works**
@@ -42,7 +40,7 @@ Parameters are specified within the pair of parentheses in the function definiti
 
 Example \(save as `function_param.py`\):
 
-```py
+```python
 def print_max(a, b):
     if a > b:
         print(a, 'is maximum')
@@ -59,7 +57,6 @@ y = 7
 
 # pass variables as arguments
 print_max(x, y)
-
 ```
 
 Output:
@@ -68,7 +65,6 @@ Output:
 $ python function_param.py
 4 is maximum
 7 is maximum
-
 ```
 
 **How It Works**
@@ -83,7 +79,7 @@ When you declare variables inside a function definition, they are not related in
 
 Example \(save as `function_local.py`\):
 
-```py
+```python
 x = 50
 
 
@@ -95,7 +91,6 @@ def func(x):
 
 func(x)
 print('x is still', x)
-
 ```
 
 Output:
@@ -105,7 +100,6 @@ $ python function_local.py
 x is 50
 Changed local x to 2
 x is still 50
-
 ```
 
 **How It Works**
@@ -124,7 +118,7 @@ You can use the values of such variables defined outside the function \(assuming
 
 Example \(save as `function_global.py`\):
 
-```py
+```python
 x = 50
 
 
@@ -138,7 +132,6 @@ def func():
 
 func()
 print('Value of x is', x)
-
 ```
 
 Output:
@@ -148,7 +141,6 @@ $ python function_global.py
 x is 50
 Changed global x to 2
 Value of x is 2
-
 ```
 
 **How It Works**
@@ -165,13 +157,12 @@ Note that the default argument value should be a constant. More precisely, the d
 
 Example \(save as `function_default.py`\):
 
-```py
+```python
 def say(message, times=1):
     print(message * times)
 
 say('Hello')
 say('World', 5)
-
 ```
 
 Output:
@@ -180,7 +171,6 @@ Output:
 $ python function_default.py
 Hello
 WorldWorldWorldWorldWorld
-
 ```
 
 **How It Works**
@@ -203,14 +193,13 @@ There are two advantages - one, using the function is easier since we do not nee
 
 Example \(save as `function_keyword.py`\):
 
-```py
+```python
 def func(a, b=5, c=10):
     print('a is', a, 'and b is', b, 'and c is', c)
 
 func(3, 7)
 func(25, c=24)
 func(c=50, a=100)
-
 ```
 
 Output:
@@ -220,7 +209,6 @@ $ python function_keyword.py
 a is 3 and b is 7 and c is 10
 a is 25 and b is 5 and c is 24
 a is 100 and b is 5 and c is 50
-
 ```
 
 **How It Works**
@@ -237,20 +225,19 @@ In the third usage `func(c=50, a=100)`, we use keyword arguments for all specifi
 
 Sometimes you might want to define a function that can take _any_ number of parameters, i.e. **var**iable number of **arg**uments, this can be achieved by using the stars \(save as `function_varargs.py`\):
 
-```py
+```python
 def total(a=5, *numbers, **phonebook):
     print('a', a)
-    
+
     #iterate through all the items in tuple
     for single_item in numbers:
         print('single_item', single_item)
-        
+
     #iterate through all the items in dictionary    
     for first_part, second_part in phonebook.items():
         print(first_part,second_part)
 
 total(10,1,2,3,Jack=1123,John=2231,Inge=1560)
-
 ```
 
 Output:
@@ -264,7 +251,6 @@ single_item 3
 Inge 1560
 John 2231
 Jack 1123
-
 ```
 
 **How It Works**
@@ -281,7 +267,7 @@ The `return` statement is used to _return_ from a function i.e. break out of the
 
 Example \(save as `function_return.py`\):
 
-```py
+```python
 def maximum(x, y):
     if x > y:
         return x
@@ -291,7 +277,6 @@ def maximum(x, y):
         return y
 
 print(maximum(2, 3))
-
 ```
 
 Output:
@@ -299,7 +284,6 @@ Output:
 ```text
 $ python function_return.py
 3
-
 ```
 
 **How It Works**
@@ -325,7 +309,7 @@ Python has a nifty feature called _documentation strings_, usually referred to b
 
 Example \(save as `function_docstring.py`\):
 
-```py
+```python
 def print_max(x, y):
     '''Prints the maximum of two numbers.
 
@@ -341,7 +325,6 @@ def print_max(x, y):
 
 print_max(3, 5)
 print(print_max.__doc__)
-
 ```
 
 Output:
@@ -352,7 +335,6 @@ $ python function_docstring.py
 Prints the maximum of two numbers.
 
     The two values must be integers.
-
 ```
 
 **How It Works**

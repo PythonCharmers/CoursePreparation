@@ -36,13 +36,12 @@ This also means that if you have a method which takes no arguments, then you sti
 
 The simplest class possible is shown in the following example \(save as `oop_simplestclass.py`\).
 
-```py
+```python
 class Person:
     pass  # An empty block
 
 p = Person()
 print(p)
-
 ```
 
 Output:
@@ -50,7 +49,6 @@ Output:
 ```text
 $ python oop_simplestclass.py
 &lt;__main__.Person instance at 0x10171f518&gt;
-
 ```
 
 **How It Works**
@@ -65,7 +63,7 @@ Notice that the address of the computer memory where your object is stored is al
 
 We have already discussed that classes/objects can have methods just like functions except that we have an extra `self` variable. We will now see an example \(save as `oop_method.py`\).
 
-```py
+```python
 class Person:
     def say_hi(self):
         print('Hello, how are you?')
@@ -74,7 +72,6 @@ p = Person()
 p.say_hi()
 # The previous 2 lines can also be written as
 # Person().say_hi()
-
 ```
 
 Output:
@@ -82,7 +79,6 @@ Output:
 ```text
 $ python oop_method.py
 Hello, how are you?
-
 ```
 
 **How It Works**
@@ -97,7 +93,7 @@ The `__init__` method is run as soon as an object of a class is instantiated \(i
 
 Example \(save as `oop_init.py`\):
 
-```py
+```python
 class Person:
     def __init__(self, name):
         self.name = name
@@ -109,7 +105,6 @@ p = Person('Swaroop')
 p.say_hi()
 # The previous 2 lines can also be written as
 # Person('Swaroop').say_hi()
-
 ```
 
 Output:
@@ -117,7 +112,6 @@ Output:
 ```text
 $ python oop_init.py
 Hello, my name is Swaroop
-
 ```
 
 **How It Works**
@@ -140,7 +134,7 @@ There are two types of _fields_ - class variables and object variables which are
 
 **Object variables** are owned by each individual object/instance of the class. In this case, each object has its own copy of the field i.e. they are not shared and are not related in any way to the field by the same name in a different instance. An example will make this easy to understand \(save as `oop_objvar.py`\):
 
-```py
+```python
 class Robot:
     """Represents a robot, with a name."""
 
@@ -195,7 +189,6 @@ droid1.die()
 droid2.die()
 
 Robot.how_many()
-
 ```
 
 Output:
@@ -217,7 +210,6 @@ There are still 1 robots working.
 C-3PO is being destroyed!
 C-3PO was the last one.
 We have 0 robots.
-
 ```
 
 **How It Works**
@@ -272,7 +264,7 @@ The `SchoolMember` class in this situation is known as the **base class** or the
 
 We will now see this example as a program \(save as `oop_subclass.py`\):
 
-```py
+```python
 class SchoolMember:
     '''Represents any school member.'''
     def __init__(self, name, age):
@@ -318,7 +310,6 @@ members = [t, s]
 for member in members:
     # Works for both Teachers and Students
     member.tell()
-
 ```
 
 Output:
@@ -332,7 +323,6 @@ $ python oop_subclass.py
 
 Name:"Mrs. Shrividya" Age:"40" Salary: "30000"
 Name:"Swaroop" Age:"25" Marks: "75"
-
 ```
 
 **How It Works**

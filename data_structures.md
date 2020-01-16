@@ -22,7 +22,7 @@ A class can also have _fields_ which are nothing but variables defined for use w
 
 Example \(save as `ds_using_list.py`\):
 
-```py
+```python
 # This is my shopping list
 shoplist = ['apple', 'mango', 'carrot', 'banana']
 
@@ -45,7 +45,6 @@ olditem = shoplist[0]
 del shoplist[0]
 print('I bought the', olditem)
 print('My shopping list is now', shoplist)
-
 ```
 
 Output:
@@ -61,7 +60,6 @@ Sorted shopping list is ['apple', 'banana', 'carrot', 'mango', 'rice']
 The first item I will buy is apple
 I bought the apple
 My shopping list is now ['banana', 'carrot', 'mango', 'rice']
-
 ```
 
 **How It Works**
@@ -90,7 +88,7 @@ Tuples are usually used in cases where a statement or a user-defined function ca
 
 Example \(save as `ds_using_tuple.py`\):
 
-```py
+```python
 # I would recommend always using parentheses
 # to indicate start and end of tuple
 # even though parentheses are optional.
@@ -105,7 +103,6 @@ print('Animals brought from old zoo are', new_zoo[2])
 print('Last animal brought from old zoo is', new_zoo[2][2])
 print('Number of animals in the new zoo is',
       len(new_zoo)-1+len(new_zoo[2]))
-
 ```
 
 Output:
@@ -118,7 +115,6 @@ All animals in new zoo are ('monkey', 'camel', ('python', 'elephant', 'penguin')
 Animals brought from old zoo are ('python', 'elephant', 'penguin')
 Last animal brought from old zoo is penguin
 Number of animals in the new zoo is 5
-
 ```
 
 **How It Works**
@@ -132,7 +128,7 @@ We can access the items in the tuple by specifying the item's position within a 
 > **Tuple with 0 or 1 items**
 >
 > An empty tuple is constructed by an empty pair of parentheses such as `myempty = ()`. However, a tuple with a single item is not so simple. You have to specify it using a comma following the first \(and only\) item so that Python can differentiate between a tuple and a pair of parentheses surrounding the object in an expression i.e. you have to specify `singleton = (2 , )` if you mean you want a tuple containing the item `2`.
-
+>
 > **Note for Perl programmers**
 >
 > A list within a list does not lose its identity i.e. lists are not flattened as in Perl. The same applies to a tuple within a tuple, or a tuple within a list, or a list within a tuple, etc. As far as Python is concerned, they are just objects stored using another object, that's all.
@@ -151,7 +147,7 @@ The dictionaries that you will be using are instances/objects of the `dict` clas
 
 Example \(save as `ds_using_dict.py`\):
 
-```py
+```python
 # 'ab' is short for 'a'ddress'b'ook
 
 ab = {
@@ -176,7 +172,6 @@ ab['Guido'] = 'guido@python.org'
 
 if 'Guido' in ab:
     print("\nGuido's address is", ab['Guido'])
-
 ```
 
 Output:
@@ -192,7 +187,6 @@ Contact Matsumoto at matz@ruby-lang.org
 Contact Larry at larry@wall.org
 
 Guido's address is guido@python.org
-
 ```
 
 **How It Works**
@@ -223,7 +217,7 @@ The three types of sequences mentioned above - lists, tuples and strings, also h
 
 Example \(save as `ds_seq.py`\):
 
-```py
+```python
 shoplist = ['apple', 'mango', 'carrot', 'banana']
 name = 'swaroop'
 
@@ -247,7 +241,6 @@ print('characters 1 to 3 is', name[1:3])
 print('characters 2 to end is', name[2:])
 print('characters 1 to -1 is', name[1:-1])
 print('characters start to end is', name[:])
-
 ```
 
 Output:
@@ -269,7 +262,6 @@ characters 1 to 3 is wa
 characters 2 to end is aroop
 characters 1 to -1 is waroo
 characters start to end is swaroop
-
 ```
 
 **How It Works**
@@ -337,7 +329,7 @@ Generally, you don't need to be worried about this, but there is a subtle effect
 
 Example \(save as `ds_reference.py`\):
 
-```py
+```python
 print('Simple Assignment')
 shoplist = ['apple', 'mango', 'carrot', 'banana']
 # mylist is just another name pointing to the same object!
@@ -361,7 +353,6 @@ del mylist[0]
 print('shoplist is', shoplist)
 print('mylist is', mylist)
 # Notice that now the two lists are different
-
 ```
 
 Output:
@@ -374,7 +365,6 @@ mylist is ['mango', 'carrot', 'banana']
 Copy by making a full slice
 shoplist is ['mango', 'carrot', 'banana']
 mylist is ['carrot', 'banana']
-
 ```
 
 **How It Works**
@@ -395,7 +385,7 @@ The strings that you use in programs are all objects of the class `str`. Some us
 
 Example \(save as `ds_str_methods.py`\):
 
-```py
+```python
 # This is a string object
 name = 'Swaroop'
 
@@ -411,7 +401,6 @@ if name.find('war') != -1:
 delimiter = '_*_'
 mylist = ['Brazil', 'Russia', 'India', 'China']
 print(delimiter.join(mylist))
-
 ```
 
 Output:
@@ -422,7 +411,6 @@ Yes, the string starts with "Swa"
 Yes, it contains the string "a"
 Yes, it contains the string "war"
 Brazil_*_Russia_*_India_*_China
-
 ```
 
 **How It Works**

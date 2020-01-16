@@ -10,7 +10,7 @@ Another common type of input/output is dealing with files. The ability to create
 
 Save this program as `io_input.py`:
 
-```py
+```python
 def reverse(text):
     return text[::-1]
 
@@ -24,7 +24,6 @@ if is_palindrome(something):
     print("Yes, it is a palindrome")
 else:
     print("No, it is not a palindrome")
-
 ```
 
 Output:
@@ -41,7 +40,6 @@ Yes, it is a palindrome
 $ python3 io_input.py
 Enter text: racecar
 Yes, it is a palindrome
-
 ```
 
 **How It Works**
@@ -64,7 +62,7 @@ You can open and use files for reading or writing by creating an object of the `
 
 Example \(save as `io_using_file.py`\):
 
-```py
+```python
 poem = '''\
 Programming is fun
 When the work is done
@@ -93,7 +91,6 @@ while True:
     print(line, end='')
 # close the file
 f.close()
-
 ```
 
 Output:
@@ -104,7 +101,6 @@ Programming is fun
 When the work is done
 if you wanna make your work also fun:
     use Python!
-
 ```
 
 **How It Works**
@@ -125,7 +121,7 @@ Python provides a standard module called `pickle` which you can use to store _an
 
 Example \(save as `io_pickle.py`\):
 
-```py
+```python
 import pickle
 
 # The name of the file where we will store the object
@@ -148,7 +144,6 @@ f = open(shoplistfile, 'rb')
 storedlist = pickle.load(f)
 print(storedlist)
 f.close()
-
 ```
 
 Output:
@@ -156,7 +151,6 @@ Output:
 ```text
 $ python io_pickle.py
 ['apple', 'mango', 'carrot']
-
 ```
 
 **How It Works**
@@ -184,7 +178,7 @@ So far, when we have been writing and using strings, or reading and writing to a
 
 When data is sent over the Internet, we need to send it in bytes... something your computer easily understands. The rules for translating Unicode \(which is what Python uses when it stores a string\) to bytes is called encoding. A popular encoding to use is UTF-8. We can read and write in UTF-8 by using a simple keyword argument in our `open` function.
 
-```py
+```python
 # encoding=utf-8
 import io
 
@@ -194,7 +188,6 @@ f.close()
 
 text = io.open("abc.txt", encoding="utf-8").read()
 print(text)
-
 ```
 
 **How It Works**

@@ -4,11 +4,7 @@ If you have not used Python before and would like to start using Python before y
 
 ## Overview
 
-We recommend the latest Anaconda Python 3.x installer, which is available from
-[here](https://www.anaconda.com/distribution#download-section). This comes with
-Python and several hundred of the most important 3rd-party packages. To install
-this, choose a folder name without a space in it. \(Examples: `C:\Python3`,
-`/home/user/anaconda`.\)
+We recommend the latest Anaconda Python 3.x installer, which is available from [here](https://www.anaconda.com/distribution#download-section). This comes with Python and several hundred of the most important 3rd-party packages. To install this, choose a folder name without a space in it. \(Examples: `C:\Python3`, `/home/user/anaconda`.\)
 
 ## More details
 
@@ -46,7 +42,9 @@ We recommend installing Python via the Anaconda distribution, because it:
 * is up-to-date
 * can be upgraded easily
 * provides **binaries** of many of the traditionally hardest-to-install
+
   packages, like SciPy, scikit-learn, Numba, PIL \(via Pillow\), lxml, and
+
   libraries for geospatial analysis.
 
 The **Anaconda Python 3.x** installer is available [here](https://www.anaconda.com/distribution#download-section).
@@ -54,7 +52,6 @@ The **Anaconda Python 3.x** installer is available [here](https://www.anaconda.c
 We highly recommend that you install Anaconda:
 
 1. for your user account \(**not** for all users\). This way you can install and remove packages later without needing Administrator / root access privileges.
-
 2. in a folder without spaces. For example: `C:\Python3` or `/home/user/anaconda` are good choices. Spaces in the Python path occasionally cause scripts to break.
 
 ## Summary
