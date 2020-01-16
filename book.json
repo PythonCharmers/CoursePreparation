@@ -1,12 +1,12 @@
 {
     "variables": {
-        "authorUrl": "https://www.swaroopch.com/about/",
-        "buyBookUrl": "https://www.swaroopch.com/buybook/",
-        "contactUrl": "https://www.swaroopch.com/contact/",
-        "downloadUrl": "https://www.gitbook.com/book/swaroopch/byte-of-python/details",
-        "officialUrl": "https://python.swaroopch.com/",
-        "pythonVersion": "3.6.0",
-        "sourceUrl": "https://github.com/swaroopch/byte-of-python",
+        "authorUrl": "https://pythoncharmers.com",
+        "buyBookUrl": "https://pythoncharmers.com",
+        "contactUrl": "https://pythoncharmers.com",
+        "downloadUrl": "https://www.gitbook.com/book/PythonCharmers/byte-of-python/details",
+        "officialUrl": "prep.pythoncharmers.com",
+        "pythonVersion": "3.7.5",
+        "sourceUrl": "https://github.com/PythonCharmers/byte-of-python",
         "vimBookUrl": "https://vim.swaroopch.com/"
     }
 }

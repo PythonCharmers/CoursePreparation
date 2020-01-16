@@ -1,5 +1,6 @@
-# Summary
+# Table of contents
 
+* [Introduction](README.md)
 * [Course Preparation](preparation.md)
 * [About Python](about_python.md)
 * [Installation](installation.md)
@@ -17,3 +18,4 @@
 * [Standard Library](stdlib.md)
 * [More](more.md)
 * [What Next](what_next.md)
+
