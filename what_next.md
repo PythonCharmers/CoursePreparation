@@ -1,8 +1,10 @@
 # What Next
 
+## After the training course
+
 If you have read this book thoroughly till now and practiced writing a lot of programs, then you must have become comfortable and familiar with Python. You have probably created some Python programs to try out stuff and to exercise your Python skills as well. If you have not done it already, you should. The question now is 'What Next?'.
 
-I would suggest that you tackle this problem:
+Swaroop C H suggests that you tackle this problem:
 
 > Create your own command-line _address-book_ program using which you can browse, add, modify, delete or search for your contacts such as friends, family and colleagues and their information such as email address and/or phone number. Details must be stored for later retrieval.
 

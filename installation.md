@@ -4,7 +4,11 @@ If you have not used Python before and would like to start using Python before y
 
 ## Overview
 
-We recommend the latest Anaconda Python 3.7 installer, which is available from [here](https://www.anaconda.com/distribution#download-section). This comes with Python and several hundred of the most important 3rd-party packages. To install this, choose a folder name without a space in it. \(Examples: C:\Python3, /home/user/anaconda.\)
+We recommend the latest Anaconda Python 3.x installer, which is available from
+[here](https://www.anaconda.com/distribution#download-section). This comes with
+Python and several hundred of the most important 3rd-party packages. To install
+this, choose a folder name without a space in it. \(Examples: `C:\Python3`,
+`/home/user/anaconda`.\)
 
 ## More details
 
@@ -12,7 +16,7 @@ Feel free to skip the rest of this chapter if the above instructions are enough.
 
 ## Python 3.x
 
-The latest version is Python 3.7. The Python 3.x series is the future of all development in the language. Python 2 is a dead end; it will not be developed further. We will use Python 3.7 as the default version for the training course.
+The latest version is Python 3.8. The Python 3.x series is the future of all development in the language. Python 2 is a dead end; it will not be developed further. We will use Python 3.7 as the default version for the training course.
 
 When we refer to "Python 3" in this book, we will assume any version of Python equal to or greater than version 3.5.
 
@@ -42,14 +46,16 @@ We recommend installing Python via the Anaconda distribution, because it:
 * is up-to-date
 * can be upgraded easily
 * provides **binaries** of many of the traditionally hardest-to-install
-
   packages, like SciPy, scikit-learn, Numba, PIL \(via Pillow\), lxml, and
-
   libraries for geospatial analysis.
 
 The **Anaconda Python 3.x** installer is available [here](https://www.anaconda.com/distribution#download-section).
 
-We highly recommend that you install Anaconda: 1. for your user account \(**not** for all users\). This way you can install and remove packages later without needing Administrator / root access privileges. 2. in a folder without spaces. For example: `C:\Python3` or `/home/user/anaconda` are good choices. Spaces in the Python path occasionally cause scripts to break.
+We highly recommend that you install Anaconda:
+
+1. for your user account \(**not** for all users\). This way you can install and remove packages later without needing Administrator / root access privileges.
+
+2. in a folder without spaces. For example: `C:\Python3` or `/home/user/anaconda` are good choices. Spaces in the Python path occasionally cause scripts to break.
 
 ## Summary
 

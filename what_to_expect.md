@@ -1,4 +1,4 @@
-# What to expect in the training
+# What to Expect
 
 ## Timing
 
