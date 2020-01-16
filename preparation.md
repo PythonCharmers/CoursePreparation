@@ -1,4 +1,4 @@
-# Course Preparation
+# Background Study
 
 We recommend pre-course reading as a highly effective learning strategy for
 getting the most benefit from a training course with Python Charmers. We

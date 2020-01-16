@@ -1,7 +1,8 @@
 # Table of contents
 
 * [Introduction](README.md)
-* [Course Preparation](preparation.md)
+* [What To Expect](what_to_expect.md)
+* [Background Study](preparation.md)
 * [About Python](about_python.md)
 * [Installation](installation.md)
 * [First Steps](first_steps.md)
