@@ -1,4 +1,4 @@
-# What to Expect
+# What to Expect in your Python Charmers Course
 
 ## Timing
 

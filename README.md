@@ -1,4 +1,4 @@
-# Introduction
+# Welcome!
 
 We are delighted that you will be attending a Python training course run by
 [Python Charmers](https://pythoncharmers.com)! These materials describe how best
