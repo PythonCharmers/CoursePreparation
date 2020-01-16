@@ -1,12 +1,11 @@
 {
     "variables": {
         "authorUrl": "https://pythoncharmers.com",
-        "buyBookUrl": "https://pythoncharmers.com",
-        "contactUrl": "https://pythoncharmers.com",
-        "downloadUrl": "https://www.gitbook.com/book/PythonCharmers/byte-of-python/details",
+        "buyBookUrl": "https://swaroopch.com/buybook/",
+        "contactUrl": "https://pythoncharmers.com/contact/",
+        "downloadUrl": "https://app.gitbook.com/@pythoncharmers/s/course-preparation/",
         "officialUrl": "prep.pythoncharmers.com",
         "pythonVersion": "3.7.5",
-        "sourceUrl": "https://github.com/PythonCharmers/byte-of-python",
-        "vimBookUrl": "https://vim.swaroopch.com/"
+        "sourceUrl": "https://github.com/PythonCharmers/course-preparation"
     }
 }
