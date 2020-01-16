@@ -25,6 +25,18 @@ and drinks. Please let us know at <info@pythoncharmers.com> if you have special 
 
 For training courses we host, we will provide an internet-connected computer for you during the course.
 
+## Supplemental materials
+
+We will supply you with printed course notes and a USB stick containing many useful Python-related resources.
+
+### USB stick
+
+The USB stick contains kitchen-sink Python installers for multiple platforms,
+*Jupyter* notebooks containing the course content, solutions to the exercises,
+several written tutorials, and reference documentation on Python and the
+3rd-party packages covered in the course.
+
+
 ## Questions?
 
 You are welcome to contact us if you have any questions prior to your training
