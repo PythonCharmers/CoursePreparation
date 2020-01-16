@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Welcome](welcome.md)
+* [Introduction](README.md)
 * [What To Expect](what_to_expect.md)
 * [Background Study](preparation.md)
 * [A Byte of Python](byte_of_python.md)
