@@ -1,6 +1,6 @@
 # Summary
 
-* [Preface](preface.md)
+* [Course Preparation](preparation.md)
 * [About Python](about_python.md)
 * [Installation](installation.md)
 * [First Steps](first_steps.md)
