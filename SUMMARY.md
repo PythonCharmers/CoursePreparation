@@ -2,10 +2,10 @@
 
 * [Introduction](README.md)
 * [What To Expect](what_to_expect.md)
+* [Installation](installation.md)
 * [Background Study](preparation.md)
 * [A Byte of Python](byte_of_python.md)
 * [About Python](about_python.md)
-* [Installation](installation.md)
 * [First Steps](first_steps.md)
 * [Basics](basics.md)
 * [Operators and Expressions](op_exp.md)
