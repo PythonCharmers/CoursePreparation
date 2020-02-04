@@ -1,6 +1,6 @@
 # A Byte of Python
 
-These materials are based on the free online book "A Byte of Python" by Swaroop
+The following materials are based on the free online book "A Byte of Python" by Swaroop
 C H but customized by Python Charmers to be optimal as pre-course reading for
 Python Charmers' [Introduction to
 Python](https://pythoncharmers.com/training/introduction-to-python/) course and
