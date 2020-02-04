@@ -16,14 +16,27 @@ We encourage an interactive and dynamic learning atmosphere. If you ask question
 
 Your trainer(s) will be available after the course each day for you to ask any one-on-one questions you like — whether about the course material and exercises or about specific problems you face in your work and how to use Python to solve them.
 
+## Computer
+
+For training courses we host, we will provide an internet-connected computer for you during the course.
+
+For on-site training courses, please bring a laptop with:
+
+- a 64-bit operating system: Windows, Linux, or macOS
+- at least 8 GB RAM, 15 GB disk space
+- internet access (preferably)
+- (preferably) USB access
+
+## Software setup
+
+If possible, prior to the course, please install the latest Anaconda Python 3.7.
+Detailed installation instructions are
+[here](https://prep.pythoncharmers.com/installation).
+
 ## Food and drink
 
 For training courses we host, we will provide lunch, morning and afternoon tea,
 and drinks. Please let us know at <info@pythoncharmers.com> if you have special dietary requirements.
-
-## Computer
-
-For training courses we host, we will provide an internet-connected computer for you during the course.
 
 ## Supplemental materials
 
