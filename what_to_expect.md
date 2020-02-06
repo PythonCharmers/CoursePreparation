@@ -38,6 +38,8 @@ Detailed installation instructions are
 For training courses we host, we will provide lunch, morning and afternoon tea,
 and drinks. Please let us know at <info@pythoncharmers.com> if you have special dietary requirements.
 
+(We don't provide catering for on-site training courses.)
+
 ## Supplemental materials
 
 We will supply you with printed course notes and a USB stick containing many useful Python-related resources.
