@@ -1,6 +1,6 @@
 # Background Study
 
-We recommend pre-course reading as a highly effective learning strategy for getting the most benefit from a training course with Python Charmers. We encourage you to make a note of any questions that arise; then we can answer your questions in the course.
+We recommend pre-course reading, alongside trying out examples using a Python interpreter such as Jupyter notebook, as a highly effective learning strategy for getting the most benefit from a training course with Python Charmers. We encourage you to make a note of any questions that arise; then we can answer your questions in the course.
 
 ## For Complete Beginners to Programming
 

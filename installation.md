@@ -62,5 +62,3 @@ We highly recommend that you install Anaconda:
 
 From now on, we will assume that you have Python installed on your system.
 
-Next, we will write our first Python program.
-
