@@ -1,4 +1,6 @@
-# What to Expect in your Python Charmers Course
+# What to Expect
+
+This section describes what to expect in your upcoming training course with Python Charmers.
 
 ## Timing
 
@@ -16,9 +18,13 @@ We encourage an interactive and dynamic learning atmosphere. If you ask question
 
 Your trainer(s) will be available after the course each day for you to ask any one-on-one questions you like — whether about the course material and exercises or about specific problems you face in your work and how to use Python to solve them.
 
-## Computer
+## Hosted courses
 
-For training courses we host, we will provide an internet-connected computer for you during the course.
+**Computer:** For training courses we host, we will provide an internet-connected computer for you during the course.
+
+**Food and drink:** For training courses we host, we will provide lunch, morning and afternoon tea, and drinks. Please let us know at <info@pythoncharmers.com> if you have special dietary requirements.
+
+## On-site courses
 
 For on-site training courses, please bring a laptop with:
 
@@ -27,18 +33,8 @@ For on-site training courses, please bring a laptop with:
 - internet access (preferably)
 - (preferably) USB access
 
-## Software setup
-
-If possible, prior to the course, please install the latest Anaconda Python 3.7.
-Detailed installation instructions are
+**Software setup:** If possible, prior to the course, please install the latest Anaconda Python 3.x. Detailed installation instructions are
 [here](https://prep.pythoncharmers.com/installation).
-
-## Food and drink
-
-For training courses we host, we will provide lunch, morning and afternoon tea,
-and drinks. Please let us know at <info@pythoncharmers.com> if you have special dietary requirements.
-
-(We don't provide catering for on-site training courses.)
 
 ## Supplemental materials
 
@@ -51,7 +47,6 @@ The USB stick contains kitchen-sink Python installers for multiple platforms,
 several written tutorials, and reference documentation on Python and the
 3rd-party packages covered in the course.
 
-
 ## Questions?
 
 You are welcome to contact us if you have any questions prior to your training
@@ -62,5 +57,3 @@ would like us to look at in advance. We can either incorporate these into the
 training course or answer your questions personally if you wish.
 
 We look forward to seeing you soon!
-
-
