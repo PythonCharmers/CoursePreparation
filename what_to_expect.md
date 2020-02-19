@@ -26,7 +26,7 @@ Your trainer(s) will be available after the course each day for you to ask any o
 
 ## On-site courses
 
-For on-site training courses, please bring a laptop with:
+For training courses on-site at your company or organization's premises, please bring a laptop with:
 
 - a 64-bit operating system: Windows, Linux, or macOS
 - at least 8 GB RAM, 15 GB disk space
