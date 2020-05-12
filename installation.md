@@ -4,7 +4,7 @@ If you have not used Python before and would like to start using Python before y
 
 ## Overview
 
-We recommend the latest Anaconda Python 3.x installer, which is available from
+We recommend the latest Anaconda Python 3.7 installer, which is available from
 [here](https://www.anaconda.com/distribution#download-section). This comes with
 Python and several hundred of the most important 3rd-party packages. Choose to
 install it **for all users** and choose a folder name without a space in it.
@@ -18,7 +18,7 @@ Feel free to skip the rest of this chapter if the above instructions are enough.
 
 The latest version is Python 3.8. The Python 3.x series is the future of all development in the language. Python 2 is a dead end; it will not be developed further. We will use Python 3.7 as the default version for the training course.
 
-When we refer to "Python 3" in this book, we will assume any version of Python equal to or greater than version 3.6.
+When we refer to "Python 3" in this book, we will assume any version of Python equal to or greater than version 3.7.
 
 ## Older Python versions
 
