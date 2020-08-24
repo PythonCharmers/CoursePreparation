@@ -7,7 +7,7 @@ Python Charmers course.
 
 For face-to-face courses, we will normally install this together in the first 10 minutes of the course.
 
-For online courses, you will access our cloud coding server via a browser (Firefox, Chrome, or Safari).
+For online courses, you will normally access our cloud coding server https://hub.pythoncharmers.com via your browser (Firefox, Chrome, or Safari). (We will send you login details shortly before the course starts.)
 
 ## For before or after the course
 
