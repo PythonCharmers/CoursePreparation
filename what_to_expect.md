@@ -4,7 +4,9 @@ This section describes what to expect in your upcoming training course with Pyth
 
 ## Timing
 
-Your training course will normally run from 9:00 to roughly 17:00 each day, with breaks of 50 minutes for lunch and 20 minutes each for morning and afternoon tea. We recommend that you arrive by 8:45am on the first day so you can settle in before the course starts.
+Your training course will normally run from 9:00 to roughly 17:00 each day, with breaks of 50 minutes for lunch and 20 minutes each for morning and afternoon tea.
+
+We highly recommend that you arrive or log in by **8:40am** on the first day so you can settle in and/or try out your computer setup before the course starts.
 
 ## Exercises
 
@@ -36,16 +38,37 @@ For training courses on-site at your company or organization's premises, please 
 **Software setup:** If possible, prior to the course, please install the latest Anaconda Python 3.x. Detailed installation instructions are
 [here](https://prep.pythoncharmers.com/installation).
 
+## Online courses
+
+For online training courses, we recommend the following hardware and software:
+
+**Audio / Video:** a webcam and headset with microphone or (preferably) a quiet room to allow you to collaborate effectively.
+
+**Computer:** at least 8 GB of RAM and a 64-bit operating system (Windows, Linux, or macOS). If possible, we recommend using multiple screens.
+
+**Browser:** Chrome, Firefox, or Safari (not IE or Edge). You will be able to use your browser to access our cloud server for coding during the course.
+
+You can also optionally install the following software on your computer.  You
+will not need this during the course but we would recommend this setup for your
+use afterwards:
+
+- The latest Anaconda Python 3 pre-installed (for your user account only): https://www.anaconda.com/distribution/#download-section
+- The latest Visual Studio Code: https://code.visualstudio.com/Download
+
 ## Supplemental materials
 
-We will supply you with printed course notes and a USB stick containing many useful Python-related resources.
+In face-to-face courses, we will give you printed course notes and a USB stick containing many useful Python-related resources.
 
-### USB stick
+In online courses, you will have access to these resources via our cloud server and you can download them for your own use after the course.
 
-The USB stick contains kitchen-sink Python installers for multiple platforms,
-*Jupyter* notebooks containing the course content, solutions to the exercises,
-several written tutorials, and reference documentation on Python and the
-3rd-party packages covered in the course.
+The materials include:
+
+- the course content (PDF or printed)
+- solutions to the exercises as Python code
+- individual chapters as *Jupyter* notebooks
+- cheat sheets
+- reference documentation on Pytohn and the 3rd-party packages covered in the course
+- sample datasets
 
 ## Questions?
 

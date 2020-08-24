@@ -1,26 +1,36 @@
 # Installation
 
-If you have not used Python before and would like to start using Python before your Python Charmers course, this chapter describes how to get started.
+## For the course
 
-## Overview
+You will normally not need to install Python on your computer before your
+Python Charmers course.
 
-We recommend the latest Anaconda Python 3.7 installer, which is available from
+For face-to-face courses, we will normally install this together in the first 10 minutes of the course.
+
+For online courses, you will access our cloud coding server via a browser (Firefox, Chrome, or Safari).
+
+## For before or after the course
+
+To install and use Python on your own computer either before or after your
+Python Charmers course, we recommend the latest Anaconda Python 3.7 installer,
+which is available from
 [here](https://www.anaconda.com/distribution#download-section). This comes with
-Python and several hundred of the most important 3rd-party packages. Choose to
-install it **for all users** and choose a folder name without a space in it.
-\(Examples: `C:\Python3`, `/home/user/anaconda`.\)
+Python and several hundred of the most important 3rd-party packages.
 
-## More details
+Choose to install it **for all users** and choose a folder name without a space
+in it.  \(Examples: `C:\Python3`, `/home/user/anaconda`.\)
+
+### More details
 
 Feel free to skip the rest of this chapter if the above instructions are enough. Otherwise, read on for more details about installing Python via Anaconda.
 
-## Python 3.x
+### Python 3.x
 
 The latest version is Python 3.8. The Python 3.x series is the future of all development in the language. Python 2 is a dead end; it will not be developed further. We will use Python 3.7 as the default version for the training course.
 
 When we refer to "Python 3" in this book, we will assume any version of Python equal to or greater than version 3.7.
 
-## Older Python versions
+### Older Python versions
 
 Python 2 is now a "legacy" platform that has received no major updates since 2010.
 
@@ -32,11 +42,11 @@ It is now relatively easy to provide automatic forward compatibility for running
 
 Your training course with Python Charmers will largely describe how to write code that is compatible with both Python 3.x and Python 2.x.
 
-## Installation requirements
+### Installation requirements
 
 We highly recommend at least 8 GB of memory \(RAM\) and a 64-bit operating system. All of the 3 major operating systems are supported: Windows, macOS, and Linux.
 
-## Anaconda Python
+### Anaconda Python
 
 We recommend installing Python via the Anaconda distribution, because it:
 
@@ -58,7 +68,11 @@ We highly recommend that you install Anaconda:
 1. for your user account \(**not** for all users\). This way you can install and remove packages later without needing Administrator / root access privileges.
 2. in a folder without spaces. For example: `C:\Python3` or `/home/user/anaconda` are good choices. Spaces in the Python path occasionally cause scripts to break.
 
-## Summary
+### Help?
 
-From now on, we will assume that you have Python installed on your system.
+If you would like any help installing Python before or after your course, please contact us at help@pythoncharmers.com.
+
+### Summary
+
+The rest of this Course Preparation site assumes that you have Python installed on your computer.
 

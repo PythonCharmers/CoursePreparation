@@ -1,22 +1,10 @@
-# What Next
+# What's Next
 
 ## After the training course
 
 If you have read this book thoroughly till now and practiced writing a lot of programs, then you must have become comfortable and familiar with Python. You have probably created some Python programs to try out stuff and to exercise your Python skills as well. If you have not done it already, you should. The question now is 'What Next?'.
 
-Swaroop C H suggests that you tackle this problem:
-
-> Create your own command-line _address-book_ program using which you can browse, add, modify, delete or search for your contacts such as friends, family and colleagues and their information such as email address and/or phone number. Details must be stored for later retrieval.
-
-This is fairly easy if you think about it in terms of all the various stuff that we have come across till now. If you still want directions on how to proceed, then here's a hint .
-
-Once you are able to do this, you can claim to be a Python programmer. Now, immediately [send me an email](https://github.com/PythonCharmers/byte-of-python/tree/60a0fd78743e2c1c45fc6e5e09b97f1b5edcb1f5/%7B%7B%20book.contactUrl%20%7D%7D) thanking me for this great book ;-\). This step is optional but recommended. Also, please consider [buying a printed copy](https://github.com/PythonCharmers/byte-of-python/tree/60a0fd78743e2c1c45fc6e5e09b97f1b5edcb1f5/%7B%7B%20book.buyBookUrl%20%7D%7D) to support the continued development of this book.
-
-If you found that program easy, here's another one:
-
-> Implement the [replace command](http://unixhelp.ed.ac.uk/CGI/man-cgi?replace). This command will replace one string with another in the list of files provided.
-
-The replace command can be as simple or as sophisticated as you wish, from simple string substitution to looking for patterns \(regular expressions\).
+Here are some project suggestions and further resources.
 
 ## Next Projects
 
@@ -68,11 +56,13 @@ Make sure you do your homework by trying to solving the problem yourself first a
 
 ## News
 
-If you want to learn what is the latest in the world of Python, then follow the [Official Python Planet](http://planet.python.org).
+If you want to learn what is the latest in the world of Python, then follow the [Official Planet Python](http://planet.python.org).
 
 ## Installing libraries
 
 There are a huge number of open source libraries at the [Python Package Index](http://pypi.python.org/pypi) which you can use in your own programs.
+
+A nice human-curated list of Python packages is here: [Awesome-Python](https://awesome-python.com).
 
 To install and use these libraries, you can use [pip](http://www.pip-installer.org/en/latest/).
 
