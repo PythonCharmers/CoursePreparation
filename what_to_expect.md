@@ -80,6 +80,14 @@ The materials include:
 - reference documentation on Pytohn and the 3rd-party packages covered in the course
 - sample datasets
 
+### Post-course assistance
+
+We are happy to offer answers to questions in the weeks following the training course, to ensure that you can make progress immediately with using Python for real work. We also offer formal consulting for direction and support with code and team architecture, building web services and data analytics tools, and providing further customised training in specific tools.
+
+### Certificate of completion
+
+We will provide you a certificate if you complete the course and successfully answer the majority of the exercise questions.
+
 ## Questions?
 
 You are welcome to contact us if you have any questions prior to your training
