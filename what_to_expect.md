@@ -8,9 +8,13 @@ Your training course will normally run from 9:00 to roughly 17:00 each day, with
 
 We highly recommend that you arrive or log in by **8:40am** on the first day so you can settle in and/or try out your computer setup before the course starts.
 
+## Format
+
+Each topic is a mixture of hands-on exercises and expert instruction.
+
 ## Exercises
 
-There will be practical programming exercises throughout the course.
+There will be practical programming exercises throughout the course. These will be challenging and fun, and the solutions will be discussed after each exercise and provided as source code on the USB sticks. During the exercises, the trainer will offer individual help and suggestions.
 
 ## Questions
 
