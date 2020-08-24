@@ -6,7 +6,13 @@ This section describes what to expect in your upcoming training course with Pyth
 
 Your training course will normally run from 9:00 to roughly 17:00 each day, with breaks of 50 minutes for lunch and 20 minutes each for morning and afternoon tea.
 
-We highly recommend that you arrive or log in by **8:40am** on the first day so you can settle in and/or try out your computer setup before the course starts.
+We highly recommend that you arrive or connect by **8:40am** (20 minutes early) on the first day so you can settle in and find your way around and get set up before the course starts.
+
+Break times (approximate):
+
+- 10:40am to 11:00am
+- 12:40pm to 1:30pm
+- 3:00pm to 3:20pm
 
 ## Format
 
