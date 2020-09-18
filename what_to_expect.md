@@ -1,6 +1,6 @@
 # What to Expect
 
-This section describes what to expect in your upcoming training course with Python Charmers.
+This section describes what to expect in your upcoming training course with <a href="https://pythoncharmers.com">Python Charmers</a>.
 
 ## Timing
 
@@ -20,7 +20,7 @@ Each topic is a mixture of hands-on exercises and expert instruction.
 
 ## Exercises
 
-There will be practical programming exercises throughout the course. These will be challenging and fun, and the solutions will be discussed after each exercise and provided as source code on the USB sticks. During the exercises, the trainer will offer individual help and suggestions.
+There will be practical programming exercises throughout the course. These will be challenging and fun, and the solutions will be discussed after each exercise and provided as source code. During the exercises, the trainer will offer individual help and suggestions.
 
 ## Questions
 
@@ -32,7 +32,7 @@ Your trainer(s) will be available after the course each day for you to ask any o
 
 ## Hosted courses
 
-**Computer:** For training courses we host, we will provide an internet-connected computer for you during the course.
+**Computer:** For face-to-face training courses Python Charmers host, we will provide an internet-connected computer for you during the course.
 
 **Food and drink:** For training courses we host, we will provide lunch, morning and afternoon tea, and drinks. Please let us know at <info@pythoncharmers.com> if you have special dietary requirements.
 
@@ -42,7 +42,7 @@ For training courses on-site at your company or organization's premises, please 
 
 - a 64-bit operating system: Windows, Linux, or macOS
 - at least 8 GB RAM, 15 GB disk space
-- internet access (preferably)
+- (preferably) internet access
 - (preferably) USB access
 
 **Software setup:** If possible, prior to the course, please install the latest Anaconda Python 3.x. Detailed installation instructions are
@@ -58,6 +58,8 @@ For online training courses, we recommend the following hardware and software:
 
 **Browser:** Chrome, Firefox, or Safari (not IE or Edge). You will be able to use your browser to access our cloud server for coding during the course.
 
+**Multiple screens:** (Optional) If possible, we recommend having a multiple screens to make it easy to keep several browser windows visible simultaneously.
+
 You can also optionally install the following software on your computer.  You
 will not need this during the course but we would recommend this setup for your
 use afterwards:
@@ -67,9 +69,9 @@ use afterwards:
 
 ## Supplemental materials
 
-In face-to-face courses, we will give you printed course notes and a USB stick containing many useful Python-related resources.
+In a face-to-face course, we will give you printed course notes and a USB stick containing many useful Python-related resources.
 
-In online courses, you will have access to these resources via our cloud server and you can download them for your own use after the course.
+In an online course, you will have access to these resources via our cloud server and you can download them for your own use during or after the course.
 
 The materials include:
 
@@ -77,12 +79,14 @@ The materials include:
 - solutions to the exercises as Python code
 - individual chapters as *Jupyter* notebooks
 - cheat sheets
-- reference documentation on Pytohn and the 3rd-party packages covered in the course
+- reference documentation on Python and the 3rd-party packages covered in the course
 - sample datasets
 
 ### Post-course assistance
 
-We are happy to offer answers to questions in the weeks following the training course, to ensure that you can make progress immediately with using Python for real work. We also offer formal consulting for direction and support with code and team architecture, building web services and data analytics tools, and providing further customised training in specific tools.
+We are happy to offer answers to questions after the training course, to ensure that you can make progress immediately with using Python for real work.
+
+We also offer formal consulting for direction and support with code and team architecture, building web services and data analytics tools, and providing further customised training in specific tools.
 
 ### Certificate of completion
 
@@ -91,10 +95,11 @@ We will provide you a certificate if you complete the course and successfully an
 ## Questions?
 
 You are welcome to contact us if you have any questions prior to your training
-course. You can reach us at <help@pythoncharmers.com>.
+course. You are also welcome to send us sample datasets or details of specific
+problems that you would like us to look at in advance. We can then either try
+to incorporate these into the training course or answer your questions
+personally.
 
-You are also welcome to send us sample datasets or specific problems that you
-would like us to look at in advance. We can either incorporate these into the
-training course or answer your questions personally if you wish.
+You can reach us at <help@pythoncharmers.com>.
 
 We look forward to seeing you soon!

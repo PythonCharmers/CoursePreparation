@@ -12,7 +12,7 @@ For online courses, you will normally access our cloud coding server https://hub
 ## For before or after the course
 
 To install and use Python on your own computer either before or after your
-Python Charmers course, we recommend the latest Anaconda Python 3.7 installer,
+Python Charmers course, we recommend the latest Anaconda Python 3.x installer,
 which is available from
 [here](https://www.anaconda.com/distribution#download-section). This comes with
 Python and several hundred of the most important 3rd-party packages.
@@ -24,9 +24,9 @@ in it.  \(Examples: `C:\Python3`, `/home/user/anaconda`.\)
 
 Feel free to skip the rest of this chapter if the above instructions are enough. Otherwise, read on for more details about installing Python via Anaconda.
 
-### Python 3.x
+### Python 3
 
-The latest version is Python 3.8. The Python 3.x series is the future of all development in the language. Python 2 is a dead end; it will not be developed further. We will use Python 3.7 as the default version for the training course.
+The latest version is Python 3.8. The Python 3.x series is the future of all development in the language. Python 2 is a dead end; it will not be developed further. We will use Python 3.x as the default version for the training course.
 
 When we refer to "Python 3" in this book, we will assume any version of Python equal to or greater than version 3.7.
 
@@ -34,7 +34,7 @@ When we refer to "Python 3" in this book, we will assume any version of Python e
 
 Python 2 is now a "legacy" platform that has received no major updates since 2010.
 
-The vast majority of Python's best packages now support Python 3.x \(see [http://py3readiness.org](http://py3readiness.org)\), so we highly recommend starting new projects in Python 3.7. Python 3.7 is also cleaner and more consistent and has a healthy number of new useful features versus 2.7.
+The vast majority of Python's best packages now support Python 3.x \(see [http://py3readiness.org](http://py3readiness.org)\), so we highly recommend starting new projects in Python 3.x. Python 3.x is also cleaner and more consistent and has a healthy number of new useful features versus 2.7.
 
 However, note that Python 3.x is backwardly incompatible with the Python 2.x series. If you are developing an existing Python 2.x code base, you must update the code to support Python 3 idioms or stick with the older version.
 

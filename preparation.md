@@ -34,33 +34,21 @@ The official website of the original book "A Byte of Python" by Swaroop C H is [
 
 The pre-course reading that we recommend if you have programming experience in other languages is the first seven to ten chapters of the official Python Tutorial. These are available online from here:
 
-```text
-http://docs.python.org/3/tutorial/
-```
+   [http://docs.python.org/3/tutorial/](http://docs.python.org/3/tutorial/)
 
 The tutorial is also available in printable format here as "tutorial.pdf". You will probably want to read the tutorial with Jupyter or an IPython interpreter handy \(from e.g. Anaconda\) to try out the examples as you see them. Reading through the first ten chapters this way takes about 4 hours.
-
-## Background Reading for Scientists and Engineers
-
-If you will be taking our [Python for Scientists & Engineers](https://pythoncharmers.com/training/python-for-scientists-engineers/) course and would like to go deeper into some of the scientific Python packages we will use in the course, there is useful background reading material available here:
-
-```text
-https://scipy-lectures.github.io/_downloads/PythonScientific-simple.pdf 
-```
 
 ## Background Reading for Data Analytics and Machine Learning
 
 If you will be taking our [Python for Predictive Data Analytics course](https://pythoncharmers.com/training/python-for-predictive-data-analytics/), the background reading we would recommend is the "Python Data Science Handbook" by Jake Vanderplas. The full text is available online here:
 
-```text
 https://jakevdp.github.io/PythonDataScienceHandbook/ 
-```
 
 The course notes you will receive from us cover broadly similar topics but are more application-specific.
 
-## Something To Think About
+## Background Reading for Scientists and Engineers
 
-> There are two ways of constructing a software design: one way is to make it so simple that there are obviously no deficiencies; the other is to make it so complicated that there are no obvious deficiencies. -- C. A. R. Hoare
+If you will be taking our [Python for Scientists & Engineers](https://pythoncharmers.com/training/python-for-scientists-engineers/) course and would like to go deeper into some of the scientific Python packages we will use in the course, there is useful background reading material available here:
 
-> Success in life is a matter not so much of talent and opportunity as of concentration and perseverance. -- C. W. Wendte
+   [https://scipy-lectures.github.io/_downloads/PythonScientific-simple.pdf](https://scipy-lectures.github.io/_downloads/PythonScientific-simple.pdf)
 
