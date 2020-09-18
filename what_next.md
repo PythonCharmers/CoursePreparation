@@ -14,12 +14,13 @@ We're sure you'll enjoy the course and learn a lot. Meanwhile, please <a href="m
 
 Here are some project suggestions and further resources for after the course.
 
-## Next Projects
+## Projects
 
-If you found above programs easy to create, then look at this comprehensive list of projects and try writing your own programs: [https://github.com/karan/Projects#mega-project-list](https://github.com/karan/Projects#mega-project-list)
+If you have a work-related project, we recommend that you try applying Python to solve it as soon as possible after the course.
 
-Also see:
+If you would like other project ideas, try these lists:
 
+* [Mega Project List](https://github.com/karan/Projects#mega-project-list)
 * [Exercises for Programmers: 57 Challenges to Develop Your Coding Skills](https://pragprog.com/book/bhwb/exercises-for-programmers)
 * [Intermediate Python Projects](https://openhatch.org/wiki/Intermediate_Python_Workshop/Projects).
 
