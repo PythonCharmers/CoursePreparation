@@ -1,14 +1,22 @@
-# What's Next
+# Resources
+
+## Before the training course
+
+We would recommend reading at least the first few chapters of this book so you are comfortable and familiar with Python before your Python Charmers training course.
+
+If you have read this book thoroughly till now and practiced writing some
+Python code, then you will be very well-placed to get the most out of the
+course.
+
+We're sure you'll enjoy the course and learn a lot. Meanwhile, please <a href="mailto:help@pythoncharmers.com">get in touch</a> if you have any questions!
 
 ## After the training course
 
-If you have read this book thoroughly till now and practiced writing a lot of programs, then you must have become comfortable and familiar with Python. You have probably created some Python programs to try out stuff and to exercise your Python skills as well. If you have not done it already, you should. The question now is 'What Next?'.
-
-Here are some project suggestions and further resources.
+Here are some project suggestions and further resources for after the course.
 
 ## Next Projects
 
-If you found above programs easy to create, then look at this comprehensive list of projects and try writing your own programs: [https://github.com/thekarangoel/Projects\#numbers](https://github.com/thekarangoel/Projects#numbers) \(the same list is also at [Martyr2's Mega Project List](http://www.dreamincode.net/forums/topic/78802-martyr2s-mega-project-ideas-list/)\).
+If you found above programs easy to create, then look at this comprehensive list of projects and try writing your own programs: [https://github.com/karan/Projects#mega-project-list](https://github.com/karan/Projects#mega-project-list)
 
 Also see:
 
@@ -128,5 +136,6 @@ When you start writing larger programs, you should definitely learn more about a
 
 ## Summary
 
-We have now come to the end of this book but, as they say, this is the _the beginning of the end_!. You are now an avid Python user and you are no doubt ready to solve many problems using Python. You can start automating your computer to do all kinds of previously unimaginable things or write your own games and much much more. So, get started!
+We have now come to the end of this book but, as they say, this is the _beginning of the end_! You are now an avid Python user and you are no doubt ready to solve many problems using Python. You can start automating your computer to do all kinds of previously unimaginable things or write your own games and much much more. So, get started!
 
+Do <a href="mailto:help@pythoncharmers">keep in touch</a> to let us know how you go!
