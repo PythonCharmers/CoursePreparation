@@ -26,7 +26,7 @@ Feel free to skip the rest of this chapter if the above instructions are enough.
 
 ### Python 3
 
-The latest version is Python 3.8. The Python 3.x series is the future of all development in the language. Python 2 is a dead end; it will not be developed further. We will use Python 3.x as the default version for the training course.
+The latest version is Python 3.9. The Python 3.x series is the future of all development in the language. Python 2 is a dead end; it will not be developed further. We will use Python 3.x as the default version for the training course.
 
 When we refer to "Python 3" in this book, we will assume any version of Python equal to or greater than version 3.7.
 
