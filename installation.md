@@ -7,7 +7,7 @@ Python Charmers course.
 
 For face-to-face courses, we will normally install this together in the first 10 minutes of the course.
 
-For online courses, you will normally access our cloud coding server https://hub.pythoncharmers.com via your browser (Firefox, Chrome, or Safari). (We will send you login details shortly before the course starts.)
+For online courses, you will normally access our cloud coding server https://cpuhub.pythoncharmers.com cpuvia your browser (Firefox, Chrome, or Safari). (We will send you login details shortly before the course starts.)
 
 ## For before or after the course
 
@@ -26,7 +26,7 @@ Feel free to skip the rest of this chapter if the above instructions are enough.
 
 ### Python 3
 
-The latest version is Python 3.9. The Python 3.x series is the future of all development in the language. Python 2 is a dead end; it will not be developed further. We will use Python 3.x as the default version for the training course.
+As of April 2024, the latest version is Python 3.12. The Python 3.x series is the future of all development in the language. Python 2 is a dead end; it will not be developed further. We will use Python 3.x as the default version for the training course.
 
 When we refer to "Python 3" in this book, we will assume any version of Python equal to or greater than version 3.7.
 
