@@ -6,7 +6,7 @@ Similarly, what if your program had some invalid statements? This is handled by 
 
 ## Errors
 
-Consider a simple `print` function call. What if we misspelt `print` as `Print`? Note the capitalization. In this case, Python _raises_ a syntax error.
+Consider a simple `print` function call. What if we misspelt `print` as `Print`? Note the capitalization. In this case, Python _raises an exception_.
 
 ```python
 >>> Print("Hello World")
