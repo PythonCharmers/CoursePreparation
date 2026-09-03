@@ -7,18 +7,30 @@ Python Charmers course.
 
 For face-to-face courses, we will normally install this together in the first 10 minutes of the course.
 
-For online courses, you will normally access our cloud coding server https://cpuhub.pythoncharmers.com cpuvia your browser (Firefox, Chrome, or Safari). (We will send you login details shortly before the course starts.)
+For online courses, you will normally access our cloud coding server https://cpuhub.pythoncharmers.com via your browser (Firefox, Chrome, or Safari). (We will send you login details shortly before the course starts.)
 
 ## For before or after the course
 
 To install and use Python on your own computer either before or after your
-Python Charmers course, we recommend the latest Anaconda Python 3.x installer,
-which is available from
-[here](https://www.anaconda.com/distribution#download-section). This comes with
+Python Charmers course, we recommend the latest
+[Anaconda Python 3 installer](https://www.anaconda.com/download). This comes with
 Python and several hundred of the most important 3rd-party packages.
 
-Choose to install it **for all users** and choose a folder name without a space
-in it.  \(Examples: `C:\Python3`, `/home/user/anaconda`.\)
+Choose to install it **for your user account only** and choose a folder name
+without a space in it.  \(Examples: `C:\Python3`, `/home/user/anaconda`.\)
+
+> **Check your licence before installing Anaconda at work**
+>
+> Anaconda changed its terms of service in 2024. The Anaconda distribution and
+> its default package channels are free for individuals and for organizations
+> with **fewer than 200 employees**, but organizations with 200 or more
+> employees or contractors need a paid licence. Accredited educational
+> institutions are exempt when using it for teaching and research.
+>
+> If your organization is over that threshold and does not hold a licence, use
+> [Miniforge](https://conda-forge.org/download/) instead. It gives you the same
+> `conda` tool but installs from the community-run conda-forge channel, which
+> is free for everyone. Your Python Charmers trainer can help you get set up.
 
 ### More details
 
@@ -26,21 +38,9 @@ Feel free to skip the rest of this chapter if the above instructions are enough.
 
 ### Python 3
 
-As of April 2024, the latest version is Python 3.12. The Python 3.x series is the future of all development in the language. Python 2 is a dead end; it will not be developed further. We will use Python 3.x as the default version for the training course.
+The latest version is Python 3.14, released in October 2025. We will use Python 3 for the training course.
 
-When we refer to "Python 3" in this book, we will assume any version of Python equal to or greater than version 3.7.
-
-### Older Python versions
-
-Python 2 is now a "legacy" platform that has received no major updates since 2010.
-
-The vast majority of Python's best packages now support Python 3.x \(see [http://py3readiness.org](http://py3readiness.org)\), so we highly recommend starting new projects in Python 3.x. Python 3.x is also cleaner and more consistent and has a healthy number of new useful features versus 2.7.
-
-However, note that Python 3.x is backwardly incompatible with the Python 2.x series. If you are developing an existing Python 2.x code base, you must update the code to support Python 3 idioms or stick with the older version.
-
-It is now relatively easy to provide automatic forward compatibility for running Python 3-style code under Python 2 using the **python-future** project, which Python Charmers sponsors. See [http://python-future.org](http://python-future.org) for information on writing compatible code.
-
-Your training course with Python Charmers will largely describe how to write code that is compatible with both Python 3.x and Python 2.x.
+When we refer to "Python 3" in these notes, we assume any version of Python equal to or greater than version 3.10. Python 2 reached end of life in January 2020 and is not covered here.
 
 ### Installation requirements
 
@@ -50,18 +50,14 @@ We highly recommend at least 8 GB of memory \(RAM\) and a 64-bit operating syste
 
 We recommend installing Python via the Anaconda distribution, because it:
 
-* is free
+* is free for individuals and smaller organizations \(see the licensing note above\)
 * can be installed without Administrator / root privileges
 * supports all three major platforms \(Windows, macOS, Linux\)
 * is up-to-date
 * can be upgraded easily
-* provides **binaries** of many of the traditionally hardest-to-install
+* provides **binaries** of many of the traditionally hardest-to-install packages, like SciPy, scikit-learn, Numba, PIL \(via Pillow\), lxml, and libraries for geospatial analysis.
 
-  packages, like SciPy, scikit-learn, Numba, PIL \(via Pillow\), lxml, and
-
-  libraries for geospatial analysis.
-
-The **Anaconda Python 3.x** installer is available [here](https://www.anaconda.com/distribution#download-section).
+The **Anaconda Python 3** installer is available [here](https://www.anaconda.com/download). [Miniforge](https://conda-forge.org/download/) is the equivalent that is free for organizations of any size.
 
 We highly recommend that you install Anaconda:
 

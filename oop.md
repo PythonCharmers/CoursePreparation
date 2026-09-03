@@ -1,4 +1,4 @@
-# Object Oriented Programming
+# Object Oriented Programming <a id="oop"></a>
 
 In all the programs we wrote till now, we have designed our program around functions i.e. blocks of statements which manipulate data. This is called the _procedure-oriented_ way of programming. There is another way of organizing your program which is to combine data and functionality and wrap it inside something called an object. This is called the _object oriented_ programming paradigm. Most of the time you can use procedural programming, but when writing large programs or have a problem that is better suited to this method, you can use object oriented programming techniques.
 
@@ -32,7 +32,7 @@ You must be wondering how Python gives the value for `self` and why you don't ne
 
 This also means that if you have a method which takes no arguments, then you still have to have one argument - the `self`.
 
-## Classes <a id="class"></a>
+## Classes <a id="classes"></a>
 
 The simplest class possible is shown in the following example \(save as `oop_simplestclass.py`\).
 
@@ -48,7 +48,7 @@ Output:
 
 ```text
 $ python oop_simplestclass.py
-&lt;__main__.Person instance at 0x10171f518&gt;
+&lt;__main__.Person object at 0x10171f518&gt;
 ```
 
 **How It Works**

@@ -27,7 +27,7 @@ Use as many useful comments as you can in your program to:
 * explain problems you're trying to solve
 * explain problems you're trying to overcome in your program, etc.
 
-[_Code tells you how, comments should tell you why_](http://www.codinghorror.com/blog/2006/12/code-tells-you-how-comments-tell-you-why.html).
+[_Code tells you how, comments should tell you why_](https://blog.codinghorror.com/code-tells-you-how-comments-tell-you-why/).
 
 This is useful for readers of your program so that they can easily understand what the program is doing. Remember, that person can be yourself after six months!
 
@@ -43,7 +43,7 @@ Numbers are mainly of two types - integers and floats.
 
 An example of an integer is `2` which is just a whole number.
 
-Examples of floating point numbers \(or _floats_ for short\) are `3.23` and `52.3E-4`. The `E` notation indicates powers of 10. In this case, `52.3E-4` means `52.3 * 10^-4^`.
+Examples of floating point numbers \(or _floats_ for short\) are `3.23` and `52.3E-4`. The `E` notation indicates powers of 10. In this case, `52.3E-4` means `52.3 * 10^-4`.
 
 > **Note for Experienced Programmers**
 >
@@ -123,7 +123,7 @@ Notice that we could have achieved the same using string concatenation:
 name + ' is ' + str(age) + ' years old'
 ```
 
-but that is much uglier and error-prone. Second, the conversion to string would be done automatically by the `format` method instead of the explicit conversion to strings needed in this case. Third, when using the `format` method, we can change the message without having to deal with the variables used and vice-versa.
+but that is much uglier and more error-prone. Second, the conversion to string would be done automatically by the `format` method instead of the explicit conversion to strings needed in this case. Third, when using the `format` method, we can change the message without having to deal with the variables used and vice-versa.
 
 Also note that the numbers are optional, so you could have also written as:
 
@@ -278,23 +278,12 @@ We will now see how to use variables along with literal constants. Save the foll
 
 Henceforth, the standard procedure to save and run a Python program is as follows:
 
-### For PyCharm
-
-1. Open [PyCharm](first_steps.md#pycharm).
-2. Create new file with the filename mentioned.
-3. Type the program code given in the example.
-4. Right-click and run the current file.
-
-NOTE: Whenever you have to provide [command line arguments](modules.md#modules), click on `Run` -&gt; `Edit Configurations` and type the arguments in the `Script parameters:` section and click the `OK` button:
-
-![PyCharm command line arguments](.gitbook/assets/pycharm_command_line_arguments.png)
-
-### For other editors
-
-1. Open your editor of choice.
+1. Open [your editor of choice](first_steps.md#editor-setup).
 2. Type the program code given in the example.
 3. Save it as a file with the filename mentioned.
-4. Run the interpreter with the command `python program.py` to run the program.
+4. Run it, either using your editor's run command or by entering `python program.py` in a terminal.
+
+NOTE: A few examples later in these notes take [command line arguments](modules.md#modules). From a terminal you supply these after the filename, for example `python program.py one two`. In an editor you will need to set them in its run configuration - in VS Code this is the `args` entry in `launch.json`, and in PyCharm it is the `Script parameters` box under `Run` → `Edit Configurations`.
 
 ### Example: Using Variables And Literal Constants
 
