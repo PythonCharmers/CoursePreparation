@@ -16,11 +16,7 @@ After analyzing the problem properly, we _design_ our program. We make a list of
 * The backup must be stored in a main backup directory.
 * The files are backed up into a zip file.
 * The name of the zip archive is the current date and time.
-* We use the standard `zip` command available by default in any standard GNU/Linux or Unix distribution. Note that you can use any archiving command you want as long as it has a command line interface.
-
-> **For Windows users**
->
-> Windows users can [install](http://gnuwin32.sourceforge.net/downlinks/zip.php) the `zip` command from the [GnuWin32 project page](http://gnuwin32.sourceforge.net/packages/zip.htm) and add `C:\Program Files\GnuWin32\bin` to your system `PATH` environment variable, similar to [what we did for recognizing the python command itself](installation.md#dos-prompt).
+* We use the `zipfile` module from the Python standard library to create the archive. It is part of every Python installation, so our program will work the same way on Windows, macOS and Linux without needing any external programs.
 
 ## The Solution
 
@@ -31,83 +27,76 @@ Save as `backup_ver1.py`:
 ```python
 import os
 import time
+import zipfile
 
 # 1. The files and directories to be backed up are
 # specified in a list.
 # Example on Windows:
-# source = ['"C:\\My Documents"']
-# Example on Mac OS X and Linux:
+# source = [r'C:\My Documents']
+# Example on macOS and Linux:
 source = ['/Users/swa/notes']
-# Notice we have to use double quotes inside a string
-# for names with spaces in it.  We could have also used
-# a raw string by writing [r'C:\My Documents'].
+# Notice we use a raw string \(the r prefix\) for the
+# Windows path so that the backslashes are not treated
+# as escape sequences.
 
 # 2. The backup must be stored in a
 # main backup directory
 # Example on Windows:
-# target_dir = 'E:\\Backup'
-# Example on Mac OS X and Linux:
+# target_dir = r'E:\Backup'
+# Example on macOS and Linux:
 target_dir = '/Users/swa/backup'
 # Remember to change this to which folder you will be using
 
 # 3. The files are backed up into a zip file.
 # 4. The name of the zip archive is the current date and time
-target = target_dir + os.sep + \
-         time.strftime('%Y%m%d%H%M%S') + '.zip'
+target = os.path.join(target_dir,
+                      time.strftime('%Y%m%d%H%M%S') + '.zip')
 
 # Create target directory if it is not present
 if not os.path.exists(target_dir):
     os.mkdir(target_dir)  # make directory
 
-# 5. We use the zip command to put the files in a zip archive
-zip_command = 'zip -r {0} {1}'.format(target,
-                                      ' '.join(source))
+# 5. We use the zipfile module to put the files in a zip archive
+print('Backing up to', target)
+with zipfile.ZipFile(target, 'w', zipfile.ZIP_DEFLATED) as backup_zip:
+    for item in source:
+        for folder, subfolders, filenames in os.walk(item):
+            for filename in filenames:
+                path = os.path.join(folder, filename)
+                print('  adding:', path)
+                backup_zip.write(path)
 
-# Run the backup
-print('Zip command is:')
-print(zip_command)
-print('Running:')
-if os.system(zip_command) == 0:
-    print('Successful backup to', target)
-else:
-    print('Backup FAILED')
+print('Successful backup to', target)
 ```
 
 Output:
 
 ```text
 $ python backup_ver1.py
-Zip command is:
-zip -r /Users/swa/backup/20140328084844.zip /Users/swa/notes
-Running:
-  adding: Users/swa/notes/ (stored 0%)
-  adding: Users/swa/notes/blah1.txt (stored 0%)
-  adding: Users/swa/notes/blah2.txt (stored 0%)
-  adding: Users/swa/notes/blah3.txt (stored 0%)
+Backing up to /Users/swa/backup/20140328084844.zip
+  adding: /Users/swa/notes/blah1.txt
+  adding: /Users/swa/notes/blah2.txt
+  adding: /Users/swa/notes/blah3.txt
 Successful backup to /Users/swa/backup/20140328084844.zip
 ```
 
 Now, we are in the _testing_ phase where we test that our program works properly. If it doesn't behave as expected, then we have to _debug_ our program i.e. remove the _bugs_ \(errors\) from the program.
 
-If the above program does not work for you, copy the line printed after the `Zip command is` line in the output, paste it in the shell \(on GNU/Linux and Mac OS X\) / `cmd` \(on Windows\), see what the error is and try to fix it. Also check the zip command manual on what could be wrong. If this command succeeds, then the problem might be in the Python program itself, so check if it exactly matches the program written above.
+If the above program does not work for you, check that the paths in `source` and `target_dir` actually exist on your computer and that you have permission to write to the backup directory. Read the error message Python prints - it will usually name the file it could not handle.
 
 **How It Works**
 
 You will notice how we have converted our _design_ into _code_ in a step-by-step manner.
 
-We make use of the `os` and `time` modules by first importing them. Then, we specify the files and directories to be backed up in the `source` list. The target directory is where we store all the backup files and this is specified in the `target_dir` variable. The name of the zip archive that we are going to create is the current date and time which we generate using the `time.strftime()` function. It will also have the `.zip` extension and will be stored in the `target_dir` directory.
+We make use of the `os`, `time` and `zipfile` modules by first importing them. Then, we specify the files and directories to be backed up in the `source` list. The target directory is where we store all the backup files and this is specified in the `target_dir` variable. The name of the zip archive that we are going to create is the current date and time which we generate using the `time.strftime()` function. It will also have the `.zip` extension and will be stored in the `target_dir` directory.
 
-Notice the use of the `os.sep` variable - this gives the directory separator according to your operating system, i.e. it will be `'/'` in GNU/Linux, Unix, macOS, and will be `'\\'` in Windows. Using `os.sep` instead of these characters directly will make our program portable and work across all of these systems.
+Notice the use of `os.path.join()` - this joins the parts of a path using the separator your operating system expects, i.e. `'/'` on Linux and macOS, and `'\'` on Windows. Using `os.path.join()` instead of adding the strings together makes our program portable across all of these systems.
 
 The `time.strftime()` function takes a specification such as the one we have used in the above program. The `%Y` specification will be replaced by the year with the century. The `%m` specification will be replaced by the month as a decimal number between `01` and `12` and so on. The complete list of such specifications can be found in the [Python Reference Manual](http://docs.python.org/3/library/time.html#time.strftime).
 
-We create the name of the target zip file using the addition operator which _concatenates_ the strings i.e. it joins the two strings together and returns a new one. Then, we create a string `zip_command` which contains the command that we are going to execute. You can check if this command works by running it in the shell \(GNU/Linux terminal or DOS prompt\).
+We then create the archive itself. `zipfile.ZipFile(target, 'w', zipfile.ZIP_DEFLATED)` opens a new zip file for **w**riting, with `ZIP_DEFLATED` asking for the contents to be compressed. We use it with the `with` statement \(which we saw in the [exceptions chapter](exceptions.md#with)\) so the archive is closed properly even if something goes wrong partway through.
 
-The `zip` command that we are using has some options available, and one of these options is `-r`. The `-r` option specifies that the zip command should work **r**ecursively for directories, i.e. it should include all the subdirectories and files. Options are followed by the name of the zip archive to create, followed by the list of files and directories to backup. We convert the `source` list into a string using the `join` method of strings which we have already seen how to use.
-
-Then, we finally _run_ the command using the `os.system` function which runs the command as if it was run from the _system_ i.e. in the shell - it returns `0` if the command was successfully, else it returns an error number.
-
-Depending on the outcome of the command, we print the appropriate message that the backup has failed or succeeded.
+To find the files, we use `os.walk()`, which visits a directory and every subdirectory beneath it. For each one it hands us the folder name, its subfolders and its filenames. We join the folder and filename back into a full path and pass it to the `write` method, which adds that file to the archive.
 
 That's it, we have created a script to take a backup of our important files!
 
@@ -130,21 +119,20 @@ Save as `backup_ver2.py`:
 ```python
 import os
 import time
+import zipfile
 
 # 1. The files and directories to be backed up are
 # specified in a list.
 # Example on Windows:
-# source = ['"C:\\My Documents"', 'C:\\Code']
-# Example on Mac OS X and Linux:
+# source = [r'C:\My Documents', r'C:\Code']
+# Example on macOS and Linux:
 source = ['/Users/swa/notes']
-# Notice we had to use double quotes inside the string
-# for names with spaces in it.
 
 # 2. The backup must be stored in a
 # main backup directory
 # Example on Windows:
-# target_dir = 'E:\\Backup'
-# Example on Mac OS X and Linux:
+# target_dir = r'E:\Backup'
+# Example on macOS and Linux:
 target_dir = '/Users/swa/backup'
 # Remember to change this to which folder you will be using
 
@@ -155,30 +143,26 @@ if not os.path.exists(target_dir):
 # 3. The files are backed up into a zip file.
 # 4. The current day is the name of the subdirectory
 # in the main directory.
-today = target_dir + os.sep + time.strftime('%Y%m%d')
+today = os.path.join(target_dir, time.strftime('%Y%m%d'))
 # The current time is the name of the zip archive.
 now = time.strftime('%H%M%S')
 
 # The name of the zip file
-target = today + os.sep + now + '.zip'
+target = os.path.join(today, now + '.zip')
 
 # Create the subdirectory if it isn't already there
 if not os.path.exists(today):
     os.mkdir(today)
     print('Successfully created directory', today)
 
-# 5. We use the zip command to put the files in a zip archive
-zip_command = 'zip -r {0} {1}'.format(target,
-                                      ' '.join(source))
+# 5. We use the zipfile module to put the files in a zip archive
+with zipfile.ZipFile(target, 'w', zipfile.ZIP_DEFLATED) as backup_zip:
+    for item in source:
+        for folder, subfolders, filenames in os.walk(item):
+            for filename in filenames:
+                backup_zip.write(os.path.join(folder, filename))
 
-# Run the backup
-print('Zip command is:')
-print(zip_command)
-print('Running:')
-if os.system(zip_command) == 0:
-    print('Successful backup to', target)
-else:
-    print('Backup FAILED')
+print('Successful backup to', target)
 ```
 
 Output:
@@ -186,13 +170,6 @@ Output:
 ```text
 $ python backup_ver2.py
 Successfully created directory /Users/swa/backup/20140329
-Zip command is:
-zip -r /Users/swa/backup/20140329/073201.zip /Users/swa/notes
-Running:
-  adding: Users/swa/notes/ (stored 0%)
-  adding: Users/swa/notes/blah1.txt (stored 0%)
-  adding: Users/swa/notes/blah2.txt (stored 0%)
-  adding: Users/swa/notes/blah3.txt (stored 0%)
 Successful backup to /Users/swa/backup/20140329/073201.zip
 ```
 
@@ -211,21 +188,20 @@ Save as `backup_ver3.py`:
 ```python
 import os
 import time
+import zipfile
 
 # 1. The files and directories to be backed up are
 # specified in a list.
 # Example on Windows:
-# source = ['"C:\\My Documents"', 'C:\\Code']
-# Example on Mac OS X and Linux:
+# source = [r'C:\My Documents', r'C:\Code']
+# Example on macOS and Linux:
 source = ['/Users/swa/notes']
-# Notice we had to use double quotes inside the string
-# for names with spaces in it.
 
 # 2. The backup must be stored in a
 # main backup directory
 # Example on Windows:
-# target_dir = 'E:\\Backup'
-# Example on Mac OS X and Linux:
+# target_dir = r'E:\Backup'
+# Example on macOS and Linux:
 target_dir = '/Users/swa/backup'
 # Remember to change this to which folder you will be using
 
@@ -236,7 +212,7 @@ if not os.path.exists(target_dir):
 # 3. The files are backed up into a zip file.
 # 4. The current day is the name of the subdirectory
 # in the main directory.
-today = target_dir + os.sep + time.strftime('%Y%m%d')
+today = os.path.join(target_dir, time.strftime('%Y%m%d'))
 # The current time is the name of the zip archive.
 now = time.strftime('%H%M%S')
 
@@ -245,37 +221,34 @@ now = time.strftime('%H%M%S')
 comment = input('Enter a comment --> ')
 # Check if a comment was entered
 if len(comment) == 0:
-    target = today + os.sep + now + '.zip'
+    zip_name = now + '.zip'
 else:
-    target = today + os.sep + now + '_' + 
+    zip_name = now + '_' + 
         comment.replace(' ', '_') + '.zip'
+target = os.path.join(today, zip_name)
 
 # Create the subdirectory if it isn't already there
 if not os.path.exists(today):
     os.mkdir(today)
     print('Successfully created directory', today)
 
-# 5. We use the zip command to put the files in a zip archive
-zip_command = "zip -r {0} {1}".format(target,
-                                      ' '.join(source))
+# 5. We use the zipfile module to put the files in a zip archive
+with zipfile.ZipFile(target, 'w', zipfile.ZIP_DEFLATED) as backup_zip:
+    for item in source:
+        for folder, subfolders, filenames in os.walk(item):
+            for filename in filenames:
+                backup_zip.write(os.path.join(folder, filename))
 
-# Run the backup
-print('Zip command is:')
-print(zip_command)
-print('Running:')
-if os.system(zip_command) == 0:
-    print('Successful backup to', target)
-else:
-    print('Backup FAILED')
+print('Successful backup to', target)
 ```
 
 Output:
 
 ```text
 $ python backup_ver3.py
-  File "backup_ver3.py", line 39
-    target = today + os.sep + now + '_' +
-                                        ^
+  File "backup_ver3.py", line 37
+    zip_name = now + '_' +
+                         ^
 SyntaxError: invalid syntax
 ```
 
@@ -292,21 +265,20 @@ Save as `backup_ver4.py`:
 ```python
 import os
 import time
+import zipfile
 
 # 1. The files and directories to be backed up are
 # specified in a list.
 # Example on Windows:
-# source = ['"C:\\My Documents"', 'C:\\Code']
-# Example on Mac OS X and Linux:
+# source = [r'C:\My Documents', r'C:\Code']
+# Example on macOS and Linux:
 source = ['/Users/swa/notes']
-# Notice we had to use double quotes inside the string
-# for names with spaces in it.
 
 # 2. The backup must be stored in a
 # main backup directory
 # Example on Windows:
-# target_dir = 'E:\\Backup'
-# Example on Mac OS X and Linux:
+# target_dir = r'E:\Backup'
+# Example on macOS and Linux:
 target_dir = '/Users/swa/backup'
 # Remember to change this to which folder you will be using
 
@@ -317,7 +289,7 @@ if not os.path.exists(target_dir):
 # 3. The files are backed up into a zip file.
 # 4. The current day is the name of the subdirectory
 # in the main directory.
-today = target_dir + os.sep + time.strftime('%Y%m%d')
+today = os.path.join(target_dir, time.strftime('%Y%m%d'))
 # The current time is the name of the zip archive.
 now = time.strftime('%H%M%S')
 
@@ -326,28 +298,25 @@ now = time.strftime('%H%M%S')
 comment = input('Enter a comment --> ')
 # Check if a comment was entered
 if len(comment) == 0:
-    target = today + os.sep + now + '.zip'
+    zip_name = now + '.zip'
 else:
-    target = today + os.sep + now + '_' + \
+    zip_name = now + '_' + \
         comment.replace(' ', '_') + '.zip'
+target = os.path.join(today, zip_name)
 
 # Create the subdirectory if it isn't already there
 if not os.path.exists(today):
     os.mkdir(today)
     print('Successfully created directory', today)
 
-# 5. We use the zip command to put the files in a zip archive
-zip_command = 'zip -r {0} {1}'.format(target,
-                                      ' '.join(source))
+# 5. We use the zipfile module to put the files in a zip archive
+with zipfile.ZipFile(target, 'w', zipfile.ZIP_DEFLATED) as backup_zip:
+    for item in source:
+        for folder, subfolders, filenames in os.walk(item):
+            for filename in filenames:
+                backup_zip.write(os.path.join(folder, filename))
 
-# Run the backup
-print('Zip command is:')
-print(zip_command)
-print('Running:')
-if os.system(zip_command) == 0:
-    print('Successful backup to', target)
-else:
-    print('Backup FAILED')
+print('Successful backup to', target)
 ```
 
 Output:
@@ -355,13 +324,6 @@ Output:
 ```text
 $ python backup_ver4.py
 Enter a comment --> added new examples
-Zip command is:
-zip -r /Users/swa/backup/20140329/074122_added_new_examples.zip /Users/swa/notes
-Running:
-  adding: Users/swa/notes/ (stored 0%)
-  adding: Users/swa/notes/blah1.txt (stored 0%)
-  adding: Users/swa/notes/blah2.txt (stored 0%)
-  adding: Users/swa/notes/blah3.txt (stored 0%)
 Successful backup to /Users/swa/backup/20140329/074122_added_new_examples.zip
 ```
 
@@ -373,15 +335,13 @@ However, if a comment was supplied, then this is attached to the name of the zip
 
 ## More Refinements
 
-The fourth version is a satisfactorily working script for most users, but there is always room for improvement. For example, you can include a _verbosity_ level for the zip command by specifying a `-v` option to make your program become more talkative or a `-q` option to make it _quiet_.
+The fourth version is a satisfactorily working script for most users, but there is always room for improvement. For example, you could add a _verbosity_ level so that the program prints the name of each file as it is added, or stays quiet unless something goes wrong.
 
 Another possible enhancement would be to allow extra files and directories to be passed to the script at the command line. We can get these names from the `sys.argv` list and we can add them to our `source` list using the `extend` method provided by the `list` class.
 
-The most important refinement would be to not use the `os.system` way of creating archives and instead using the [zipfile](http://docs.python.org/3/library/zipfile.html) or [tarfile](http://docs.python.org/3/library/tarfile.html) built-in modules to create these archives. They are part of the standard library and available already for you to use without external dependencies on the zip program to be available on your computer.
+At the moment the archive stores each file under its full path, so backing up `/Users/swa/notes` produces entries like `Users/swa/notes/blah1.txt`. The `write` method takes a second argument, `arcname`, which lets you choose the name the file is stored under. Can you use it to store the files relative to the folder being backed up?
 
-However, I have been using the `os.system` way of creating a backup in the above examples purely for pedagogical purposes, so that the example is simple enough to be understood by everybody but real enough to be useful.
-
-Can you try writing the fifth version that uses the [zipfile](http://docs.python.org/3/library/zipfile.html) module instead of the `os.system` call?
+You may also want to look at the [tarfile](https://docs.python.org/3/library/tarfile.html) module, which works much like `zipfile` but produces `.tar.gz` archives, the usual choice on Linux and macOS.
 
 ## The Software Development Process
 

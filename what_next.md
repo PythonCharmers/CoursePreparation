@@ -21,67 +21,58 @@ If you have a work-related project, we recommend that you try applying Python to
 If you would like other project ideas, try these lists:
 
 * [Mega Project List](https://github.com/karan/Projects#mega-project-list)
-* [Exercises for Programmers: 57 Challenges to Develop Your Coding Skills](https://pragprog.com/book/bhwb/exercises-for-programmers)
-* [Intermediate Python Projects](https://openhatch.org/wiki/Intermediate_Python_Workshop/Projects).
+* [Exercises for Programmers: 57 Challenges to Develop Your Coding Skills](https://pragprog.com/titles/bhwb/exercises-for-programmers/)
 
 ## Example Code
 
 The best way to learn a programming language is to write a lot of code and read a lot of code:
 
-* [Python Cookbook](http://code.activestate.com/recipes/langs/python/) is an extremely valuable collection of recipes or tips on how to solve certain kinds of problems using Python. This is a must-read for every Python user.
-* [Python Module of the Week](http://pymotw.com/2/contents.html) is another excellent must-read guide to the [Standard Library](stdlib.md#stdlib).
+* [Python Module of the Week](https://pymotw.com/3/) is an excellent guide to the [Standard Library](stdlib.md#stdlib), with worked examples for module after module.
+* [Real Python](https://realpython.com/) publishes a large library of practical tutorials, many of them free.
 
 ## Advice
 
-* [The Hitchhiker's Guide to Python!](http://docs.python-guide.org/en/latest/)
+* [The Hitchhiker's Guide to Python](https://docs.python-guide.org/)
 * [The Elements of Python Style](https://github.com/amontalenti/elements-of-python-style)
-* [Python Big Picture](http://slott-softwarearchitect.blogspot.ca/2013/06/python-big-picture-whats-roadmap.html)
-* ["Writing Idiomatic Python" ebook](http://www.jeffknupp.com/writing-idiomatic-python-ebook/) \(paid\)
+* [PEP 8](https://peps.python.org/pep-0008/), the official Python style guide
 
 ## Videos
 
-* [Full Stack Web Development with Flask](https://github.com/realpython/discover-flask)
-* [PyVideo](http://www.pyvideo.org)
+* [PyVideo](https://pyvideo.org) indexes talks from Python conferences worldwide.
+* [PyCon AU](https://www.youtube.com/@PyConAU) publishes recordings of the Australian conference.
 
 ## Questions and Answers
 
-* [Official Python Dos and Don'ts](http://docs.python.org/3/howto/doanddont.html)
-* [Official Python FAQ](http://www.python.org/doc/faq/general/)
-* [Norvig's list of Infrequently Asked Questions](http://norvig.com/python-iaq.html)
-* [Python Interview Q & A](http://dev.fyicenter.com/Interview-Questions/Python/index.html)
-* [StackOverflow questions tagged with python](http://stackoverflow.com/questions/tagged/python)
-
-## Tutorials
-
-* [Hidden features of Python](http://stackoverflow.com/q/101268/4869)
-* [What's the one code snippet/python trick/etc did you wish you knew when you learned python?](http://www.reddit.com/r/Python/comments/19dir2/whats_the_one_code_snippetpython_tricketc_did_you/)
-* [Awaretek's comprehensive list of Python tutorials](http://www.awaretek.com/tutorials.html)
+* [Official Python FAQ](https://docs.python.org/3/faq/)
+* [Norvig's list of Infrequently Asked Questions](https://norvig.com/python-iaq.html)
+* [Stack Overflow questions tagged with python](https://stackoverflow.com/questions/tagged/python)
 
 ## Discussion
 
-If you are stuck with a Python problem, and don't know whom to ask, then the [python-tutor list](http://mail.python.org/mailman/listinfo/tutor) is the best place to ask your question.
+If you are stuck with a Python problem and don't know whom to ask, the [Python Discourse forum](https://discuss.python.org/) is a good place to start, and its Users category welcomes beginners.
 
-Make sure you do your homework by trying to solving the problem yourself first and [ask smart questions](http://catb.org/~esr/faqs/smart-questions.html).
+Make sure you do your homework by trying to solve the problem yourself first and [ask smart questions](http://www.catb.org/~esr/faqs/smart-questions.html).
 
 ## News
 
-If you want to learn what is the latest in the world of Python, then follow the [Official Planet Python](http://planet.python.org).
+If you want to keep up with the world of Python, follow [Planet Python](https://planetpython.org) or the [Real Python newsletter](https://realpython.com/newsletter/).
 
 ## Installing libraries
 
-There are a huge number of open source libraries at the [Python Package Index](http://pypi.python.org/pypi) which you can use in your own programs.
+There are a huge number of open source libraries at the [Python Package Index](https://pypi.org) which you can use in your own programs.
 
 A nice human-curated list of Python packages is here: [Awesome-Python](https://awesome-python.com).
 
-To install and use these libraries, you can use [pip](http://www.pip-installer.org/en/latest/).
+To install and use these libraries, you can use [pip](https://pip.pypa.io/en/stable/). Newer tools such as [uv](https://docs.astral.sh/uv/) can do the same job considerably faster, and also manage your Python versions and virtual environments for you.
 
 ## Creating a Website
 
-Learn [Flask](http://flask.pocoo.org) to create your own website. Some resources to get started:
+Learn [Flask](https://flask.palletsprojects.com/) to create your own website. Some resources to get started:
 
-* [Flask Official Quickstart](http://flask.pocoo.org/docs/quickstart/)
-* [The Flask Mega-Tutorial](http://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world)
-* [Example Flask Projects](https://github.com/mitsuhiko/flask/tree/master/examples)
+* [Flask Official Quickstart](https://flask.palletsprojects.com/en/stable/quickstart/)
+* [The Flask Mega-Tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world)
+
+[Django](https://www.djangoproject.com/) is the other main choice, and takes a batteries-included approach where Flask stays minimal. If you are building an API rather than a website, [FastAPI](https://fastapi.tiangolo.com/) is worth a look.
 
 ## Graphical Software
 
@@ -89,22 +80,22 @@ Suppose you want to create your own graphical programs using Python. This can be
 
 There are lots of choices for GUI using Python:
 
-* Kivy
-  * [http://kivy.org](http://kivy.org)
-* PyGTK
-  * This is the Python binding for the GTK+ toolkit which is the foundation upon which GNOME is built. GTK+ has many quirks in usage but once you become comfortable, you can create GUI apps fast. The Glade graphical interface designer is indispensable. The documentation is yet to improve. GTK+ works well on GNU/Linux but its port to Windows is incomplete. You can create both free as well as proprietary software using GTK+. To get started, read the [PyGTK tutorial](http://www.pygtk.org/tutorial.html).
-* PyQt
-  * This is the Python binding for the Qt toolkit which is the foundation upon which the KDE is built. Qt is extremely easy to use and very powerful especially due to the Qt Designer and the amazing Qt documentation. PyQt is free if you want to create open source \(GPL'ed\) software and you need to buy it if you want to create proprietary closed source software. Starting with Qt 4.5 you can use it to create non-GPL software as well. To get started, read about [PySide](http://qt-project.org/wiki/PySide).
-* wxPython
-  * This is the Python bindings for the wxWidgets toolkit. wxPython has a learning curve associated with it. However, it is very portable and runs on GNU/Linux, Windows, Mac and even embedded platforms. There are many IDEs available for wxPython which include GUI designers as well such as [SPE \(Stani's Python Editor\)](http://spe.pycs.net/) and the [wxGlade](http://wxglade.sourceforge.net/) GUI builder. You can create free as well as proprietary software using wxPython. To get started, read the [wxPython tutorial](http://zetcode.com/wxpython/). 
+* [Tkinter](https://docs.python.org/3/library/tkinter.html)
+  * Part of the standard library, so there is nothing to install. It looks dated next to the others and is awkward for large applications, but for a small tool it is the quickest way to put a window on the screen.
+* [PySide6 / Qt for Python](https://doc.qt.io/qtforpython/)
+  * The official Python binding for the Qt toolkit, released by the Qt Company under the LGPL, so you can use it in both open source and proprietary software. Qt is powerful and well documented, and Qt Designer lets you lay out interfaces visually. [PyQt](https://www.riverbankcomputing.com/software/pyqt/) is an alternative binding for the same toolkit, but it is GPL or commercial only.
+* [Kivy](https://kivy.org)
+  * Aimed at multi-touch applications and the only option here that also targets Android and iOS.
+* [wxPython](https://wxpython.org)
+  * Python bindings for the wxWidgets toolkit. It uses the native widgets of each platform, so applications look at home on Windows, macOS and Linux.
+
+If you want a browser-based interface rather than a desktop one, [Streamlit](https://streamlit.io), [Dash](https://dash.plotly.com) and [Gradio](https://www.gradio.app) let you build a usable interface from a Python script with very little code. For data-focused work these are often a faster route than a desktop GUI, and we cover dashboards in our [Creating Dashboards in Python](https://pythoncharmers.com/training/creating-dashboards-python/) course.
 
 ### Summary of GUI Tools
 
-For more choices, see the [GuiProgramming wiki page at the official python website](http://www.python.org/cgi-bin/moinmoin/GuiProgramming).
+For more choices, see the [GUI Programming page on the Python wiki](https://wiki.python.org/moin/GuiProgramming).
 
-Unfortunately, there is no one standard GUI tool for Python. I suggest that you choose one of the above tools depending on your situation. The first factor is whether you are willing to pay to use any of the GUI tools. The second factor is whether you want the program to run only on Windows or on Mac and GNU/Linux or all of them. The third factor, if GNU/Linux is a chosen platform, is whether you are a KDE or GNOME user on GNU/Linux.
-
-For a more detailed and comprehensive analysis, see Page 26 of the ['The Python Papers, Volume 3, Issue 1' \(PDF\)](http://archive.pythonpapers.org/ThePythonPapersVolume3Issue1.pdf).
+There is no one standard GUI tool for Python, so choose based on your situation. Is the interface for you alone or for other people? Does it need to run on one platform or several, or on mobile? And would a web page in the browser serve your users better than a desktop window?
 
 ## Various Implementations
 
@@ -114,14 +105,14 @@ We have been using the _CPython_ software to run our programs. It is referred to
 
 There are also other software that can run your Python programs:
 
-* [Jython](http://www.jython.org)
-  * A Python implementation that runs on the Java platform. This means you can use Java libraries and classes from within Python language and vice-versa.
-* [IronPython](http://www.codeplex.com/Wiki/View.aspx?ProjectName=IronPython)
+* [PyPy](https://pypy.org)
+  * A Python implementation written in Python, with a just-in-time compiler that can make long-running programs several times faster than CPython.
+* [Jython](https://www.jython.org)
+  * A Python implementation that runs on the Java platform. This means you can use Java libraries and classes from within Python language and vice-versa. Note that it targets Python 2 only, so it is of limited use for new work.
+* [IronPython](https://ironpython.net)
   * A Python implementation that runs on the .NET platform. This means you can use .NET libraries and classes from within Python language and vice-versa.
-* [PyPy](http://codespeak.net/pypy/dist/pypy/doc/home.html)
-  * A Python implementation written in Python! This is a research project to make it fast and easy to improve the interpreter since the interpreter itself is written in a dynamic language \(as opposed to static languages such as C, Java or C\# in the above three implementations\)
 
-There are also others such as [CLPython](http://common-lisp.net/project/clpython/) - a Python implementation written in Common Lisp and [Brython](http://brython.info/) which is an implementation on top of a JavaScript interpreter which could mean that you can use Python \(instead of JavaScript\) to write your web-browser \("Ajax"\) programs.
+There are also others such as [Brython](https://brython.info) and [Pyodide](https://pyodide.org), which run Python inside a web browser, letting you use Python instead of JavaScript for browser programs.
 
 Each of these implementations have their specialized areas where they are useful.
 
@@ -129,14 +120,13 @@ Each of these implementations have their specialized areas where they are useful
 
 When you start writing larger programs, you should definitely learn more about a functional approach to programming as opposed to the class-based approach to programming that we learned in the [object-oriented programming chapter](oop.md#oop):
 
-* [Functional Programming Howto by A.M. Kuchling](http://docs.python.org/3/howto/functional.html)
-* [Functional programming chapter in 'Dive Into Python' book](http://www.diveintopython.net/functional_programming/index.html)
-* [Functional Programming with Python presentation](http://ua.pycon.org/static/talks/kachayev/index.html)
+* [Functional Programming HOWTO by A.M. Kuchling](https://docs.python.org/3/howto/functional.html)
+* [The `functools` module](https://docs.python.org/3/library/functools.html) and [`itertools`](https://docs.python.org/3/library/itertools.html) in the standard library
 * [Funcy library](https://github.com/Suor/funcy)
-* [PyToolz library](http://toolz.readthedocs.org/en/latest/)
+* [PyToolz library](https://toolz.readthedocs.io/en/latest/)
 
 ## Summary
 
 We have now come to the end of this book but, as they say, this is the _beginning of the end_! You are now an avid Python user and you are no doubt ready to solve many problems using Python. You can start automating your computer to do all kinds of previously unimaginable things or write your own games and much much more. So, get started!
 
-Do <a href="mailto:help@pythoncharmers">keep in touch</a> to let us know how you go!
+Do <a href="mailto:help@pythoncharmers.com">keep in touch</a> to let us know how you go!

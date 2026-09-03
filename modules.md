@@ -31,10 +31,10 @@ are
 arguments
 
 
-The PYTHONPATH is ['/tmp/py',
+The PYTHONPATH is ['/Users/swa/helloworld',
 # many entries here, not shown here
-'/Library/Python/2.7/site-packages',
-'/usr/local/lib/python2.7/site-packages']
+'/Library/Python/3.12/site-packages',
+'/usr/local/lib/python3.12/site-packages']
 ```
 
 **How It Works**

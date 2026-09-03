@@ -1,4 +1,4 @@
-# Standard Library
+# Standard Library <a id="stdlib"></a>
 
 The Python Standard Library contains a huge number of useful modules and is part of every standard Python installation. It is important to become familiar with the Python Standard Library since many problems can be solved quickly if you are familiar with the range of things that these libraries can do.
 
@@ -79,7 +79,7 @@ We use three modules from the standard library - the `os` module for interacting
 
 First, we check which operating system we are using by checking the string returned by `platform.platform()` \(for more information, see `import platform; help(platform)`\). If it is Windows, we figure out the home drive, the home folder and the filename where we want to store the information. Putting these three parts together, we get the full location of the file. For other platforms, we need to know just the home folder of the user and we get the full location of the file.
 
-We use the `os.path.join()` function to put these three parts of the location together. The reason to use a special function rather than just adding the strings together is because this function will ensure the full location matches the format expected by the operating system. Note: the `join()' method we use here that's part of the`os`module is different from the string method`join\(\)\` that we've used elsewhere in this book.
+We use the `os.path.join()` function to put these three parts of the location together. The reason to use a special function rather than just adding the strings together is because this function will ensure the full location matches the format expected by the operating system. Note: the `join()` method we use here that's part of the `os` module is different from the string method `join()` that we've used elsewhere in this book.
 
 We configure the `logging` module to write all the messages in a particular format to the file we have specified.
 
@@ -89,7 +89,7 @@ Finally, we can put messages that are either meant for debugging, information, w
 
 There is much more to be explored in the standard library such as [debugging](http://docs.python.org/3/library/pdb.html), [handling command line options](http://docs.python.org/3/library/argparse.html), [regular expressions](http://docs.python.org/3/library/re.html) and so on.
 
-The best way to further explore the standard library is to read Doug Hellmann's excellent [Python Module of the Week](http://pymotw.com/2/contents.html) series \(also available as a [book](http://amzn.com/0321767349)\) and reading the [Python documentation](http://docs.python.org/3/).
+The best way to further explore the standard library is to read Doug Hellmann's excellent [Python 3 Module of the Week](https://pymotw.com/3/) series and the [Python documentation](https://docs.python.org/3/).
 
 ## Summary
 

@@ -52,20 +52,20 @@ For training courses on-site at your company or organization's premises, please 
 
 For online training courses, we recommend the following hardware and software:
 
-**Audio / Video:** a webcam and headset with microphone or (preferably) a quiet room to allow you to collaborate effectively.
+**Audio / Video:** a webcam and headset with microphone or (preferably) a quiet room to allow you to collaborate effectively.
 
-**Computer:** at least 8 GB of RAM and a 64-bit operating system (Windows, Linux, or macOS). If possible, we recommend using multiple screens.
+**Computer:** at least 8 GB of RAM and a 64-bit operating system (Windows, Linux, or macOS). If possible, we recommend using multiple screens.
 
-**Browser:** Chrome, Firefox, or Safari (not IE or Edge). You will be able to use your browser to access our cloud server for coding during the course.
+**Browser:** Chrome, Firefox, or Safari (not IE or Edge). You will be able to use your browser to access our cloud server for coding during the course.
 
-**Multiple screens:** (Optional) If possible, we recommend having a multiple screens to make it easy to keep several browser windows visible simultaneously.
+**Multiple screens:** (Optional) If possible, we recommend having multiple screens to make it easy to keep several browser windows visible simultaneously.
 
-You can also optionally install the following software on your computer.  You
+You can also optionally install the following software on your computer.  You
 will not need this during the course but we would recommend this setup for your
 use afterwards:
 
-- The latest Anaconda Python 3 pre-installed (for your user account only): https://www.anaconda.com/distribution/#download-section
-- The latest Visual Studio Code: https://code.visualstudio.com/Download
+- The latest Anaconda Python 3 pre-installed (for your user account only): https://www.anaconda.com/download — if you work for an organization with 200 or more staff, please read the licensing note in the [Installation](installation.md) chapter first
+- The latest Visual Studio Code: https://code.visualstudio.com/Download
 
 ## Supplemental materials
 

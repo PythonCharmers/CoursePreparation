@@ -54,7 +54,7 @@ We take that text and reverse it. If the original text and reversed text are equ
 
 Checking whether a text is a palindrome should also ignore punctuation, spaces and case. For example, "Rise to vote, sir." is also a palindrome but our current program doesn't say it is. Can you improve the above program to recognize this palindrome?
 
-If you need a hint, the idea is that...
+If you need a hint, the idea is to use a tuple of characters to hold all the punctuation you want to discard, then use the `in` operator to check whether each character should be kept. Converting the text to lower case with the `str.lower()` method will handle the case-insensitivity.
 
 ## Files
 
@@ -163,38 +163,30 @@ Next, we retrieve the object using the `load` function of the `pickle` module wh
 
 So far, when we have been writing and using strings, or reading and writing to a file, we have used simple English characters only. Both English and non-English characters can be represented in Unicode \(please see the articles at the end of this section for more info\), and Python 3 by default stores string variables \(think of all that text we wrote using single or double or triple quotes\) in Unicode.
 
-> NOTE: If you are using Python 2, and we want to be able to read and write other non-English languages, we need to use the `unicode` type, and it all starts with the character `u`, e.g. `u"hello world"`
-
 ```python
 >>> "hello world"
 'hello world'
 >>> type("hello world")
-<class 'str'>
->>> u"hello world"
-'hello world'
->>> type(u"hello world")
 <class 'str'>
 ```
 
 When data is sent over the Internet, we need to send it in bytes... something your computer easily understands. The rules for translating Unicode \(which is what Python uses when it stores a string\) to bytes is called encoding. A popular encoding to use is UTF-8. We can read and write in UTF-8 by using a simple keyword argument in our `open` function.
 
 ```python
-# encoding=utf-8
-import io
+with open("abc.txt", "wt", encoding="utf-8") as f:
+    f.write("Imagine non-English language here")
 
-f = io.open("abc.txt", "wt", encoding="utf-8")
-f.write(u"Imagine non-English language here")
-f.close()
+with open("abc.txt", encoding="utf-8") as f:
+    text = f.read()
 
-text = io.open("abc.txt", encoding="utf-8").read()
 print(text)
 ```
 
 **How It Works**
 
-We use `io.open` and then use the `encoding` argument in the first open statement to encode the message, and then again in the second open statement when decoding the message. Note that we should only use encoding in the open statement when in text mode.
+We pass the `encoding` argument to `open` when writing the file, and again when reading it back. Note that `encoding` only applies when the file is opened in text mode.
 
-Whenever we write a program that uses Unicode literals \(by putting a `u` before the string\) like we have used above, we have to make sure that Python itself is told that our program uses UTF-8, and we have to put `# encoding=utf-8` comment at the top of our program.
+Always pass `encoding` explicitly. If you leave it out, Python picks a default that depends on the operating system, so a file written on one machine may not read correctly on another. Being explicit makes your program behave the same everywhere.
 
 You should learn more about this topic by reading:
 

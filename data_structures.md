@@ -4,7 +4,7 @@ Data structures are basically just that - they are _structures_ which can hold s
 
 There are four built-in data structures in Python - _list, tuple, dictionary and set_. We will see how to use each of them and how they make life easier for us.
 
-## List
+## List <a id="lists"></a>
 
 A `list` is a data structure that holds an ordered collection of items i.e. you can store a _sequence_ of items in a list. This is easy to imagine if you can think of a shopping list where you have a list of items to buy, except that you probably have each item on a separate line in your shopping list whereas in Python you put commas in between them.
 

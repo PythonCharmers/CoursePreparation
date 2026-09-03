@@ -14,7 +14,7 @@ If you do have previous programming experience, you will be interested in the di
 
 ## Original Book: "A Byte of Python"
 
-The official website of the original book "A Byte of Python" by Swaroop C H is [here](https://swaroopch.gitbook.io/byte-of-python/), where you can read the original book online, download the latest versions of the book, [buy a printed hard copy](https://swaroopch.com/buybook/), and also send feedback to the original author.
+The official website of the original book "A Byte of Python" by Swaroop C H is [here](https://python.swaroopch.com), where you can read the original book online, download the latest versions of the book, [buy a printed hard copy](https://swaroopch.com/buybook/), and also send feedback to the original author.
 
 ## Other Resources for Beginners
 
@@ -40,7 +40,7 @@ The tutorial is also available in printable format here as "tutorial.pdf". You w
 
 ## Background Reading for Data Analytics and Machine Learning
 
-If you will be taking our [Python for Predictive Data Analytics course](https://pythoncharmers.com/training/python-for-predictive-data-analytics/), the background reading we would recommend is the "Python Data Science Handbook" by Jake Vanderplas. The full text is available online here:
+If you will be taking our [Python for Machine Learning course](https://pythoncharmers.com/training/python-for-machine-learning/), the background reading we would recommend is the "Python Data Science Handbook" by Jake Vanderplas. The full text is available online here:
 
 https://jakevdp.github.io/PythonDataScienceHandbook/ 
 
@@ -48,7 +48,7 @@ The course notes you will receive from us cover broadly similar topics but are m
 
 ## Background Reading for Scientists and Engineers
 
-If you will be taking our [Python for Scientists & Engineers](https://pythoncharmers.com/training/python-for-scientists-engineers/) course and would like to go deeper into some of the scientific Python packages we will use in the course, there is useful background reading material available here:
+If you will be taking our [Python for Scientists & Engineers](https://pythoncharmers.com/training/python-for-scientists-and-engineers/) course and would like to go deeper into some of the scientific Python packages we will use in the course, there is useful background reading material available here:
 
-   [https://scipy-lectures.github.io/_downloads/PythonScientific-simple.pdf](https://scipy-lectures.github.io/_downloads/PythonScientific-simple.pdf)
+   [https://lectures.scientific-python.org/](https://lectures.scientific-python.org/)
 

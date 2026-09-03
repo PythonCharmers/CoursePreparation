@@ -24,7 +24,7 @@ As you will see, Python is extremely easy to get started with. Python has an ext
 
 ### Free and Open Source
 
-Python is an example of a _FLOSS_ \(Free/Libré and Open Source Software\). In simple terms, you can freely distribute copies of this software, read its source code, make changes to it, and use pieces of it in new free programs. FLOSS is based on the concept of a community which shares knowledge. This is one of the reasons why Python is so good - it has been created and is constantly improved by a community who just want to see a better Python.
+Python is an example of a _FLOSS_ \(Free/Libre and Open Source Software\). In simple terms, you can freely distribute copies of this software, read its source code, make changes to it, and use pieces of it in new free programs. FLOSS is based on the concept of a community which shares knowledge. This is one of the reasons why Python is so good - it has been created and is constantly improved by a community who just want to see a better Python.
 
 ### High-level Language
 
@@ -68,24 +68,24 @@ Besides the standard library, there are various other high-quality libraries whi
 
 Python is indeed an exciting and powerful language. It has the right combination of performance and features that make writing programs in Python both fun and easy.
 
-## Python 3 versus 2
+## A note on Python 2
 
-You can ignore this section if you're not interested in the difference between "Python version 2" and "Python version 3". But please do be aware of which version you are using. This book is written for Python version 3.
-
-Remember that once you have properly understood and learn to use one version, you can easily learn the differences and use the other one. The hard part is learning programming and understanding the basics of Python language itself. That is our goal in this book, and once you have achieved that goal, you can easily use Python 2 or Python 3 depending on your situation.
-
-For details on differences between Python 2 and Python 3, see:
-
-* [The future of Python 2](http://lwn.net/Articles/547191/)
-* [Porting Python 2 Code to Python 3](https://docs.python.org/3/howto/pyporting.html)
-* [Writing code that runs under both Python2 and 3](http://python-future.org/compatible_idioms.html)
-* [Supporting Python 3: An in-depth guide](http://python3porting.com)
+> **Python 2 is dead. These notes are Python 3 only.**
+>
+> Python 2 reached end of life on 1 January 2020. It receives no updates, no
+> bug fixes, and no security patches. Every example in these notes is Python 3,
+> and that is what we use in our training courses.
+>
+> You may still encounter Python 2 code in older codebases. If you have to
+> migrate some, the official
+> [Porting Python 2 Code to Python 3](https://docs.python.org/3/howto/pyporting.html)
+> guide is the place to start. Otherwise you can safely forget Python 2 exists.
 
 ## What Programmers Say
 
-You may find it interesting to read what great hackers like ESR have to say about Python:
+You may find it interesting to read what great hackers like Eric S. Raymond \(ESR\) have to say about Python:
 
 * _Eric S. Raymond_ is the author of "The Cathedral and the Bazaar" and is also the person who coined the term _Open Source_. He says that [Python has become his favorite programming language](http://www.python.org/about/success/esr/). This article was the real inspiration for my first brush with Python.
 * _Bruce Eckel_ is the author of the famous 'Thinking in Java' and 'Thinking in C++' books. He says that no language has made him more productive than Python. He says that Python is perhaps the only language that focuses on making things easier for the programmer. Read the [complete interview](http://www.artima.com/intv/aboutme.html) for more details.
-* _Peter Norvig_ is a well-known Lisp author and Director of Search Quality at Google \(thanks to Guido van Rossum for pointing that out\). He says that [writing Python is like writing in pseudocode](https://news.ycombinator.com/item?id=1803815). He says that Python has always been an integral part of Google. You can actually verify this statement by looking at the [Google Jobs](http://www.google.com/jobs/index.html) page which lists Python knowledge as a requirement for software engineers.
+* _Peter Norvig_ is a well-known Lisp author and Director of Search Quality at Google \(thanks to Guido van Rossum for pointing that out\). He says that [writing Python is like writing in pseudocode](https://news.ycombinator.com/item?id=1803815). He says that Python has always been an integral part of Google.
 
