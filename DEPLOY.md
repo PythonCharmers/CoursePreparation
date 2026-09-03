@@ -41,68 +41,56 @@ invalidation leaves visitors on the old pages until they expire.
 
 ## Standing up the infrastructure
 
-**Already done** (account `863275378519`, profile `pythoncharmers`):
+This is built and live (account `863275378519`, profile `pythoncharmers`).
+Cut over from GitBook on 2026-09-03.
 
 | Piece | Value |
 |---|---|
 | Bucket | `prep.pythoncharmers.com-static`, ap-southeast-2, all public access blocked |
+| Distribution | `E860X92Z46FIJ` — `davhmfb96k65s.cloudfront.net` |
+| Certificate | `arn:aws:acm:us-east-1:863275378519:certificate/af21a93a-7899-4b4d-9867-6c3510846918` |
+| Origin access control | `E26W5NP176KK7A` |
+| Viewer-request function | `charmers-static-index-rewrite` (shared with the brand sites) |
 | Deploy role | `arn:aws:iam::863275378519:role/prep-pythoncharmers-deploy` |
 | OIDC provider | `token.actions.githubusercontent.com` |
-| Repo settings | `AWS_DEPLOY_ROLE_ARN`, `AWS_REGION`, `S3_BUCKET` |
+| DNS | `prep.pythoncharmers.com` A-record alias to the distribution |
 
-The built site has been synced to the bucket, so it is ready to serve as soon
-as there is a distribution in front of it.
+### If you ever rebuild this
 
-### Still to do: the certificate and distribution
-
-**This is blocked until the DNS record moves**, for a reason worth
-understanding before you try it.
-
-ACM validates a certificate by checking CAA records on the name it is issuing
-for. `prep.pythoncharmers.com` is currently a CNAME to `hosting.gitbook.com`,
-and CAA is inherited from the CNAME's *target*, not from our zone. GitBook
-publishes:
-
-```
-0 issue "digicert.com"
-0 issue "pki.goog"
-0 issue "letsencrypt.org"
-```
-
-Amazon is not on that list, so ACM fails with `CAA_ERROR`. Nor can we override
-it by adding our own CAA at `prep`: DNS forbids any other record coexisting
-with a CNAME at the same name, and Route 53 rejects the attempt.
-
-So the order has to be:
+The commands mirror `charmers_website_project/deploy/STATIC_SITES.md`, whose
+scripts do most of the work — run them from that repo:
 
 ```bash
-# 1. Point prep at something we control. Either delete the GitBook CNAME
-#    outright, or park it on a placeholder, then:
+aws s3api create-bucket --bucket prep.pythoncharmers.com-static \
+    --region ap-southeast-2 \
+    --create-bucket-configuration LocationConstraint=ap-southeast-2 \
+    --profile pythoncharmers
+aws s3api put-public-access-block --bucket prep.pythoncharmers.com-static \
+    --profile pythoncharmers \
+    --public-access-block-configuration \
+    "BlockPublicAcls=true,IgnorePublicAcls=true,BlockPublicPolicy=true,RestrictPublicBuckets=true"
+
 aws acm request-certificate --region us-east-1 \
     --domain-name prep.pythoncharmers.com \
     --validation-method DNS --profile pythoncharmers
-
-# 2. Validate (run from charmers_website_project)
 uv run python scripts/validate_acm_certificate.py <arn> --wait
 
-# 3. Distribution, OAC and bucket policy (also from charmers_website_project)
 uv run python scripts/create_static_site_distribution.py \
     --bucket prep.pythoncharmers.com-static \
     --alias prep.pythoncharmers.com \
     --certificate-arn <arn>
 
-# 4. Route 53 A-record alias for prep.pythoncharmers.com to the distribution's
-#    d....cloudfront.net domain, hosted zone Z2FDTNDATAQYW2 (CloudFront's fixed
-#    zone id, the same for every distribution).
+# Then a Route 53 A-record alias to the distribution's d....cloudfront.net
+# domain, hosted zone Z2FDTNDATAQYW2 (CloudFront's fixed zone id).
 ```
 
-This means a short window where `prep.pythoncharmers.com` resolves to neither
-the old site nor the new one — roughly the time ACM takes to issue plus the
-distribution deploying, so plan it outside a course intake.
-
-Finally, add the distribution id as the `CLOUDFRONT_DISTRIBUTION_ID` repository
-variable, and tighten the deploy role's `cloudfront:CreateInvalidation`
-statement from `"Resource": "*"` to that distribution's ARN.
+**The one trap, if the name is ever pointed at a third-party host again:** ACM
+checks CAA records on the name it is issuing for, and CAA is inherited from a
+CNAME's *target*, not from our zone. While `prep` was a CNAME to
+`hosting.gitbook.com` it inherited GitBook's CAA, which authorises DigiCert,
+Google and Let's Encrypt but not Amazon, so ACM failed with `CAA_ERROR`. Adding
+our own CAA at `prep` was not possible either, because DNS forbids a CNAME
+coexisting with any other record at the same name. The CNAME had to go first.
 
 ### Two things that are not obvious
 
@@ -129,31 +117,31 @@ secrets. Create the role with a trust policy for
 only `s3:PutObject`/`DeleteObject`/`ListBucket` on the bucket and
 `cloudfront:CreateInvalidation` on the distribution.
 
-Required repository settings:
+All four repository settings are in place:
 
-| Setting | Kind | Value | Set? |
-|---|---|---|---|
-| `AWS_DEPLOY_ROLE_ARN` | secret | ARN of the deploy role | yes |
-| `AWS_REGION` | variable | `ap-southeast-2` | yes |
-| `S3_BUCKET` | variable | `prep.pythoncharmers.com-static` | yes |
-| `CLOUDFRONT_DISTRIBUTION_ID` | variable | the distribution id | not yet |
-
-Until all four exist the deploy step is skipped rather than failing, so the
-build and checks still run on pull requests.
+| Setting | Kind | Value |
+|---|---|---|
+| `AWS_DEPLOY_ROLE_ARN` | secret | `arn:aws:iam::863275378519:role/prep-pythoncharmers-deploy` |
+| `AWS_REGION` | variable | `ap-southeast-2` |
+| `S3_BUCKET` | variable | `prep.pythoncharmers.com-static` |
+| `CLOUDFRONT_DISTRIBUTION_ID` | variable | `E860X92Z46FIJ` |
 
 The role trusts only `repo:PythonCharmers/CoursePreparation:ref:refs/heads/master`,
-so a pull request from a fork cannot assume it.
+so a pull request from a fork cannot assume it, and its policy grants nothing
+beyond writing to that one bucket and invalidating that one distribution.
 
-## Cutting over from GitBook
+## The GitBook cutover
 
-`prep.pythoncharmers.com` currently resolves to GitBook's hosted service. The
-live site and this repository have been able to drift apart, so **before
-switching DNS, check whether the GitBook space contains edits that were never
-committed here** — anything written in GitBook's web editor would be lost.
+Done on 2026-09-03. `prep.pythoncharmers.com` previously CNAME'd to GitBook's
+hosted service; it is now an A-record alias to the CloudFront distribution.
 
-Once the distribution is up, verify it over its `d....cloudfront.net` name
-first, then repoint the Route 53 record. Keep the GitBook space in place,
-unpublished, until the new site has been serving for a few weeks.
+Before switching, the live GitBook site was compared against this repository —
+it served the same 19 pages, with nothing written in GitBook's web editor that
+was not already in git.
+
+**The GitBook space itself has not been touched.** Leave it in place until the
+new site has been serving for a few weeks, then delete it there. Nothing points
+at it now.
 
 The old GitBook files — `book.json`, `SUMMARY.md`, `INSTALL.md` and the
 `gitbook serve` Makefile — have been removed. `mkdocs.yml` is the live
