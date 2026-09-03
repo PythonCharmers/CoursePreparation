@@ -41,29 +41,51 @@ invalidation leaves visitors on the old pages until they expire.
 
 ## Standing up the infrastructure
 
-This has not been created yet. The steps mirror
-`charmers_website_project/deploy/STATIC_SITES.md`, and its scripts do most of
-the work — run them from that repo.
+**Already done** (account `863275378519`, profile `pythoncharmers`):
+
+| Piece | Value |
+|---|---|
+| Bucket | `prep.pythoncharmers.com-static`, ap-southeast-2, all public access blocked |
+| Deploy role | `arn:aws:iam::863275378519:role/prep-pythoncharmers-deploy` |
+| OIDC provider | `token.actions.githubusercontent.com` |
+| Repo settings | `AWS_DEPLOY_ROLE_ARN`, `AWS_REGION`, `S3_BUCKET` |
+
+The built site has been synced to the bucket, so it is ready to serve as soon
+as there is a distribution in front of it.
+
+### Still to do: the certificate and distribution
+
+**This is blocked until the DNS record moves**, for a reason worth
+understanding before you try it.
+
+ACM validates a certificate by checking CAA records on the name it is issuing
+for. `prep.pythoncharmers.com` is currently a CNAME to `hosting.gitbook.com`,
+and CAA is inherited from the CNAME's *target*, not from our zone. GitBook
+publishes:
+
+```
+0 issue "digicert.com"
+0 issue "pki.goog"
+0 issue "letsencrypt.org"
+```
+
+Amazon is not on that list, so ACM fails with `CAA_ERROR`. Nor can we override
+it by adding our own CAA at `prep`: DNS forbids any other record coexisting
+with a CNAME at the same name, and Route 53 rejects the attempt.
+
+So the order has to be:
 
 ```bash
-# 1. Bucket, with public access blocked
-aws s3api create-bucket --bucket prep.pythoncharmers.com-static \
-    --region ap-southeast-2 \
-    --create-bucket-configuration LocationConstraint=ap-southeast-2 \
-    --profile pythoncharmers
-aws s3api put-public-access-block --bucket prep.pythoncharmers.com-static \
-    --profile pythoncharmers \
-    --public-access-block-configuration \
-    "BlockPublicAcls=true,IgnorePublicAcls=true,BlockPublicPolicy=true,RestrictPublicBuckets=true"
-
-# 2. Certificate, in us-east-1 -- CloudFront will not accept one from elsewhere.
-#    A single name here: prep is a subdomain, so there is no apex/www pair.
+# 1. Point prep at something we control. Either delete the GitBook CNAME
+#    outright, or park it on a placeholder, then:
 aws acm request-certificate --region us-east-1 \
     --domain-name prep.pythoncharmers.com \
     --validation-method DNS --profile pythoncharmers
+
+# 2. Validate (run from charmers_website_project)
 uv run python scripts/validate_acm_certificate.py <arn> --wait
 
-# 3. Distribution, OAC and bucket policy
+# 3. Distribution, OAC and bucket policy (also from charmers_website_project)
 uv run python scripts/create_static_site_distribution.py \
     --bucket prep.pythoncharmers.com-static \
     --alias prep.pythoncharmers.com \
@@ -74,8 +96,13 @@ uv run python scripts/create_static_site_distribution.py \
 #    zone id, the same for every distribution).
 ```
 
-Then put the distribution id into the `CLOUDFRONT_DISTRIBUTION_ID` repository
-variable so the workflow can invalidate it.
+This means a short window where `prep.pythoncharmers.com` resolves to neither
+the old site nor the new one — roughly the time ACM takes to issue plus the
+distribution deploying, so plan it outside a course intake.
+
+Finally, add the distribution id as the `CLOUDFRONT_DISTRIBUTION_ID` repository
+variable, and tighten the deploy role's `cloudfront:CreateInvalidation`
+statement from `"Resource": "*"` to that distribution's ARN.
 
 ### Two things that are not obvious
 
@@ -104,15 +131,18 @@ only `s3:PutObject`/`DeleteObject`/`ListBucket` on the bucket and
 
 Required repository settings:
 
-| Setting | Kind | Value |
-|---|---|---|
-| `AWS_DEPLOY_ROLE_ARN` | secret | ARN of the deploy role |
-| `AWS_REGION` | variable | `ap-southeast-2` |
-| `S3_BUCKET` | variable | `prep.pythoncharmers.com-static` |
-| `CLOUDFRONT_DISTRIBUTION_ID` | variable | the distribution id |
+| Setting | Kind | Value | Set? |
+|---|---|---|---|
+| `AWS_DEPLOY_ROLE_ARN` | secret | ARN of the deploy role | yes |
+| `AWS_REGION` | variable | `ap-southeast-2` | yes |
+| `S3_BUCKET` | variable | `prep.pythoncharmers.com-static` | yes |
+| `CLOUDFRONT_DISTRIBUTION_ID` | variable | the distribution id | not yet |
 
-Until these exist the deploy step is skipped rather than failing, so the build
-and checks still run on pull requests.
+Until all four exist the deploy step is skipped rather than failing, so the
+build and checks still run on pull requests.
+
+The role trusts only `repo:PythonCharmers/CoursePreparation:ref:refs/heads/master`,
+so a pull request from a fork cannot assume it.
 
 ## Cutting over from GitBook
 
