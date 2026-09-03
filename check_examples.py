@@ -16,7 +16,7 @@ import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).parent
-CHAPTER = ROOT / "problem_solving.md"
+CHAPTER = ROOT / "docs" / "problem_solving.md"
 BLOCK = re.compile(r"```python\n(.*?)```", re.S)
 # Version 3 in the chapter is deliberately broken.
 EXPECT_SYNTAX_ERROR = {3}

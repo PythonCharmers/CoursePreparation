@@ -15,7 +15,7 @@ import urllib.request
 from collections import defaultdict
 from pathlib import Path
 
-ROOT = Path(__file__).parent
+ROOT = Path(__file__).parent / "docs"
 URL = re.compile(r"https?://[^\s)\]\"'>]+")
 TIMEOUT = 20
 USER_AGENT = "Mozilla/5.0 (compatible; link-checker/1.0)"

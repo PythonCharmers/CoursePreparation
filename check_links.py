@@ -11,7 +11,7 @@ import re
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).parent
+ROOT = Path(__file__).parent / "docs"
 
 LINK = re.compile(r"\[[^\]]*\]\(([^)]+)\)")
 EXPLICIT_ANCHOR = re.compile(r'<a\s+id="([^"]+)"')

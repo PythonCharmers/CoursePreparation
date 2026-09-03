@@ -1,0 +1,98 @@
+name: Build and deploy
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+# Let a newer push supersede an in-flight run, but never interrupt a deploy
+# partway through an S3 sync.
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write  # for the OIDC role assumption in the deploy step
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+        with:
+          version: "latest"
+
+      - name: Set up Python
+        run: uv python install 3.13
+
+      # --strict fails on a broken internal link or a page missing from the nav.
+      - name: Build site
+        run: uv run --with mkdocs-material mkdocs build --strict
+
+      - name: Check cross-references
+        run: uv run check_links.py
+
+      # Extracts the backup programs from problem_solving.md and runs them, so a
+      # broken example cannot reach learners.
+      - name: Check code examples
+        run: uv run check_examples.py
+
+      # The standalone copies in docs/programs/ must match the chapter.
+      - name: Check programs match the chapter
+        run: |
+          uv run sync_programs.py
+          git diff --exit-code -- docs/programs/ || {
+            echo "::error::docs/programs/ is out of sync. Run 'uv run sync_programs.py' and commit."
+            exit 1
+          }
+
+      - name: Check for non-breaking spaces
+        run: |
+          uv run fix_nbsp.py
+          git diff --exit-code -- docs/ || {
+            echo "::error::Non-breaking spaces found. Run 'uv run fix_nbsp.py' and commit."
+            exit 1
+          }
+
+      # Everything below deploys, so it is skipped for pull requests and when
+      # the AWS settings have not been created yet (see DEPLOY.md).
+      # `secrets` cannot be read in a step-level `if:`, so the check runs in the
+      # shell with the values passed through `env:`.
+      - name: Check deploy is configured
+        id: configured
+        if: github.event_name == 'push'
+        env:
+          ROLE_ARN: ${{ secrets.AWS_DEPLOY_ROLE_ARN }}
+          BUCKET: ${{ vars.S3_BUCKET }}
+          DISTRIBUTION: ${{ vars.CLOUDFRONT_DISTRIBUTION_ID }}
+        run: |
+          if [ -n "$ROLE_ARN" ] && [ -n "$BUCKET" ] && [ -n "$DISTRIBUTION" ]; then
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::AWS settings not configured; skipping deploy. See DEPLOY.md."
+          fi
+
+      - name: Configure AWS credentials
+        if: steps.configured.outputs.ready == 'true'
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_DEPLOY_ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION }}
+
+      - name: Sync to S3
+        if: steps.configured.outputs.ready == 'true'
+        run: aws s3 sync build/site/ "s3://${{ vars.S3_BUCKET }}/" --delete
+
+      # CloudFront caches aggressively; without this, visitors stay on the old
+      # pages until the cache expires.
+      - name: Invalidate CloudFront
+        if: steps.configured.outputs.ready == 'true'
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id "${{ vars.CLOUDFRONT_DISTRIBUTION_ID }}" \
+            --paths '/*'
