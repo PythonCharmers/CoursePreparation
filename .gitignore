@@ -1,6 +1,10 @@
-_book
+build/
 *.pyc
+__pycache__/
 .*.sw*
+
+# Legacy GitBook output, from before the move to MkDocs
+_book
 byte_of_python.html
 byte_of_python.xml
 byte_of_python.pdf

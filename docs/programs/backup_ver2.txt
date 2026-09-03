@@ -1,0 +1,3 @@
+$ python backup_ver2.py
+Successfully created directory /Users/swa/backup/20140329
+Successful backup to /Users/swa/backup/20140329/073201.zip

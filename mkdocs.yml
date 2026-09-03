@@ -1,0 +1,84 @@
+site_name: Python Charmers Course Preparation
+site_url: https://prep.pythoncharmers.com
+site_description: >-
+  What to expect from your Python Charmers training course, how to set up
+  Python, and an introductory tutorial for those new to programming.
+copyright: >-
+  Adapted from "A Byte of Python" by Swaroop C H, and released like the
+  original under CC BY-SA 4.0.
+
+docs_dir: docs
+site_dir: build/site
+
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.top
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+  palette:
+    # Respect the reader's system setting, with a manual toggle.
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.details
+
+plugins:
+  - search
+
+# Mirrors the old SUMMARY.md ordering.
+nav:
+  - Introduction: index.md
+  - What To Expect: what_to_expect.md
+  - Installation: installation.md
+  - Background Study: preparation.md
+  - A Byte of Python:
+      - About These Notes: byte_of_python.md
+      - About Python: about_python.md
+      - First Steps: first_steps.md
+      - Basics: basics.md
+      - Operators and Expressions: op_exp.md
+      - Control Flow: control_flow.md
+      - Functions: functions.md
+      - Modules: modules.md
+      - Data Structures: data_structures.md
+      - Problem Solving: problem_solving.md
+      - Object Oriented Programming: oop.md
+      - Input and Output: io.md
+      - Exceptions: exceptions.md
+      - Standard Library: stdlib.md
+      - More: more.md
+  - Resources: what_next.md
+  - Licence: LICENSE.md
+
+# Sample data used by the examples, not pages in their own right.
+exclude_docs: |
+  poem.txt
+  programs/
